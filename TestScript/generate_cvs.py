@@ -53,13 +53,14 @@ def add_horizontal_line(document):
     This is a python-docx XML trick.
     """
     p = document.add_paragraph()
+    p.style.font.size = Pt(3)
     pPr = p._p.get_or_add_pPr()
     pBdr = OxmlElement("w:pBdr")
 
     bottom = OxmlElement("w:bottom")
     bottom.set(qn("w:val"), "single")
     bottom.set(qn("w:sz"), "5")  # Thickness
-    bottom.set(qn("w:space"), "1")  # Spacing
+    bottom.set(qn("w:space"), "0")  # Spacing
     bottom.set(qn("w:color"), "000000")
 
     pBdr.append(bottom)
@@ -109,45 +110,8 @@ def add_section_heading(document, heading_text):
     run.bold = True
     run.font.name = "Arial"
     run.font.size = Pt(13)
-
     # Add a single blank line after the heading
     # document.add_paragraph("")
-
-
-# def add_bullet_paragraph(
-#     document,
-#     text,
-#     bullet_symbol="▪",
-#     indent_left_inches=0.1,
-#     indent_right_inches=0,
-#     indent_hang_inches=0,
-#     justify=True,
-#     bold=False,
-# ):
-#     """
-#     Adds a paragraph with a square bullet (default '▪' U+25AA).
-#     Indentation is controlled by indent_left_inches.
-#     No extra blank lines after each bullet (compact).
-#     """
-#     p = document.add_paragraph()
-#     p.paragraph_format.left_indent = Inches(indent_left_inches)
-#     p.paragraph_format.right_indent = Inches(indent_right_inches)
-#     if justify:
-#         p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
-#     p.paragraph_format.first_line_indent = Inches(-indent_hang_inches)
-
-#     # Bullet run
-#     if bullet_symbol != "":
-#         bullet_run = p.add_run(f"{bullet_symbol} ")
-#         bullet_run.font.name = "Arial"
-#         bullet_run.font.size = Pt(11)
-
-#     # Main text run
-#     text_run = p.add_run(text)
-#     text_run.font.name = "Arial"
-#     text_run.font.size = Pt(11)
-#     if bold:
-#         text_run.bold = True
 
 
 def add_bullet_paragraph(
@@ -164,7 +128,7 @@ def add_bullet_paragraph(
     space_after=0,
 ):
     """
-    Adds a sub-bullet paragraph with a round bullet (default '•' U+2022),
+    Adds a sub-bullet paragraph with a round bullet (default '•' U+2022), "▪"
     often used for 'Description' or 'Key Elements'.
     'label' (e.g. 'Description: ') can be bold, while 'text' is normal.
     """
@@ -198,6 +162,66 @@ def add_bullet_paragraph(
         text_run.bold = True
 
 
+def add_skills_table(document, skills, specialty_order):
+    """
+    Adds a table for the skills section without a header row.
+    Each row contains:
+      - The specialty (capitalized, bold, 11pt, right aligned) in the first column.
+      - Its skills (joined with " - ") in the second column, in 11pt.
+    The table is centered on the page.
+    All borders are removed.
+    """
+    # Create a table with no initial rows and 2 columns.
+    table = document.add_table(rows=0, cols=2)
+    table.style = "Table Grid"
+    table.alignment = WD_ALIGN_PARAGRAPH.CENTER  # Center the whole table
+
+    for sp in specialty_order:
+        if sp in skills:
+            row = table.add_row()
+            cell0 = row.cells[0]
+            cell1 = row.cells[1]
+
+            # First cell: specialty name, bold, 11pt, right aligned.
+            p0 = cell0.paragraphs[0]
+            p0.alignment = WD_ALIGN_PARAGRAPH.LEFT
+            p0.paragraph_format.left_indent = Inches(0.2)
+            run0 = p0.add_run("▪ " + sp.capitalize() + ":")
+            run0.bold = True
+            run0.font.name = "Arial"
+            run0.font.size = Pt(11)
+            # Second cell: skills list, 11pt, left aligned.
+            p1 = cell1.paragraphs[0]
+            p1.alignment = WD_ALIGN_PARAGRAPH.LEFT
+            p1.paragraph_format.space_after = Pt(3)
+            run1 = p1.add_run(" - ".join(skills[sp]))
+            run1.font.name = "Arial"
+            run1.font.size = Pt(11)
+
+            # Adjust column widths (first column remains narrow, second column is increased)
+            cell0.width = Inches(1.3)
+            cell1.width = Inches(6.8)
+
+    # Remove all borders.
+    tbl = table._element
+    tblPr = tbl.find(qn("w:tblPr"))
+    if tblPr is None:
+        tblPr = OxmlElement("w:tblPr")
+        tbl.insert(0, tblPr)
+    tblBorders = tblPr.find(qn("w:tblBorders"))
+    if tblBorders is None:
+        tblBorders = OxmlElement("w:tblBorders")
+        tblPr.append(tblBorders)
+    for border_name in ["top", "left", "bottom", "right", "insideH", "insideV"]:
+        border = tblBorders.find(qn("w:" + border_name))
+        if border is None:
+            border = OxmlElement("w:" + border_name)
+            tblBorders.append(border)
+        border.set(qn("w:val"), "nil")
+
+    return table
+
+
 #
 # ------------- MAIN CV BUILDER -------------
 #
@@ -207,14 +231,10 @@ def build_cv(document, data, specialty=None):
     """
     Builds either a general CV (if specialty is None) or a specialized CV.
     Matches the layout from your screenshot:
-      - Name (centered, uppercase, bold, 18pt)
+      - Name (centered, uppercase, bold, 24pt)
       - Contact info (centered)
       - Horizontal line
-      - EDUCATION
-      - WORK EXPERIENCE
-      - SKILLS
-      - PROJECTS
-      - COURSES
+      - SUMMARY, EDUCATION, WORK EXPERIENCE, SKILLS (as a table), PROJECTS, COURSES
     Uses:
       - Smaller square bullets (▪) for top-level items
       - Round bullets (•) for sub-items (Description, Key Elements)
@@ -282,37 +302,19 @@ def build_cv(document, data, specialty=None):
             )
     add_horizontal_line(document)
 
-    # ---------- SKILLS ----------
+    # ---------- SKILLS (as a table) ----------
     add_section_heading(document, "Skills")
     if specialty:
-        # Chosen specialty first, then the others
         specialty_order = [specialty] + [s for s in specialities if s != specialty]
     else:
-        # General order
         specialty_order = specialities
-
-    for sp in specialty_order:
-        if sp in data["skills"]:
-            skill_str = " - ".join(data["skills"][sp])
-            # Make the specialty name bold, the rest normal
-            # e.g. "Embedded: AVR, PIC..."
-            add_bullet_paragraph(
-                document,
-                f"{sp.capitalize()}: ",
-                skill_str,
-                bullet_symbol="▪",
-                indent_left_inches=0.2,
-                indent_right_inches=0,
-                justify=False,
-                space_after=1.5,
-            )
+    add_skills_table(document, data["skills"], specialty_order)
     add_horizontal_line(document)
 
     # ---------- PROJECTS ----------
     add_section_heading(document, "Projects")
     projects = data.get("projects", {})
     if specialty:
-        # Main projects for chosen specialty
         if specialty in projects:
             for proj in projects[specialty].get("main", []):
                 add_bullet_paragraph(
@@ -332,7 +334,6 @@ def build_cv(document, data, specialty=None):
                     bullet_symbol="•",
                     indent_left_inches=0.6,
                 )
-        # Shortend for others
         others = [s for s in specialities if s != specialty]
         for sp_other in others:
             if sp_other in projects:
@@ -358,14 +359,13 @@ def build_cv(document, data, specialty=None):
                         indent_left_inches=0.6,
                     )
     else:
-        # General => list 'main' for each specialty in order
         for sp_general in specialities:
             if sp_general in projects:
                 for proj in projects[sp_general].get("main", []):
                     add_bullet_paragraph(
                         document,
-                        label = "",
-                        text = proj["title"],
+                        label="",
+                        text=proj["title"],
                         bullet_symbol="▪",
                         indent_left_inches=0.3,
                     )
@@ -389,7 +389,6 @@ def build_cv(document, data, specialty=None):
     add_section_heading(document, "Courses")
     courses = data.get("courses", {})
     if specialty:
-        # Main for chosen specialty
         if specialty in courses:
             for course in courses[specialty].get("main", []):
                 add_bullet_paragraph(
@@ -402,7 +401,6 @@ def build_cv(document, data, specialty=None):
                     bullet_symbol="•",
                     indent_left_inches=0.6,
                 )
-        # Shortend for others
         others = [s for s in specialities if s != specialty]
         for sp_other in others:
             if sp_other in courses:
@@ -421,7 +419,6 @@ def build_cv(document, data, specialty=None):
                         indent_left_inches=0.6,
                     )
     else:
-        # General => 'main' for each specialty in order
         for sp_general in specialities:
             if sp_general in courses:
                 for course in courses[sp_general].get("main", []):
@@ -488,12 +485,6 @@ def generate_cv_files(data):
 #
 
 if __name__ == "__main__":
-    # if len(sys.argv) < 2:
-    #     print("Usage: python generate_cvs.py <data.json>")
-    #     sys.exit(1)
-
-    # data_file = sys.argv[1]
-
     data_file = "./data.json"
     with open(data_file, "r", encoding="utf-8") as f:
         data = json.load(f)

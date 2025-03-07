@@ -13,7 +13,7 @@
   ],
   "work_experience": [
     {
-      "header": "Robotics & Embedded Instructor // Beta Engineering Training Academy // Seasonal // Jan 2023 - Present.",
+      "header": "Robotics & Embedded Instructor // Beta Academy // Seasonal // Jan 2023 - Present.",
       "body": "Promoted from Technical Support to Lead Instructor for Arduino and AVR embedded systems, instructing 600+ students in programming and hardware integration with consistently positive feedback."
     },
     {
@@ -49,8 +49,7 @@
       "Atmega16/32 (AVR)",
       "PIC18F2XK20/4XK20 (PIC)",
       "STM32",
-      "Fundamentals of Embedded Systems",
-      "ARM Cortex-M Architecture",
+      "ARM Cortex-M",
       "Embedded C",
       "FreeRTOS",
       "I2C",
