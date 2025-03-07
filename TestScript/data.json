@@ -1,0 +1,232 @@
+{
+  "specialities": ["software", "embedded", "digital", "web"],
+  "header": {
+    "name": "SALAH-ELDIN HASSEN",
+    "contact": "salah1423161@gmail.com – Giza / Egypt - (+20) 1127709232",
+    "links": "https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/ - https://github.com/salah0eldin"
+  },
+  "summary": [
+    "Dynamic and adaptable Software Engineer with extensive experience across embedded, digital, and web technologies. Proficient in C/C++ and Python, I excel at leveraging advanced AI tools to transform innovative ideas into robust, production-ready solutions. A fast learner and effective collaborator, I bring a creative, forward-thinking approach to solving complex technical challenges."
+  ],
+  "education": [
+    "Cairo University Faculty of Engineering, Department of Electronics and Electrical Communication Engineering (CUFE EECE) // 2021 - 2026."
+  ],
+  "work_experience": [
+    {
+      "header": "Robotics & Embedded Instructor // Beta Engineering Training Academy // Seasonal // Jan 2023 - Present.",
+      "body": "Promoted from Technical Support to Lead Instructor for Arduino and AVR embedded systems, instructing 600+ students in programming and hardware integration with consistently positive feedback."
+    },
+    {
+      "header": "Coding AI Trainer // Outlier // Freelancing // Nov 2024 - Dec 2024.",
+      "body": "Trained and optimized AI models for coding tasks through iterative evaluation, scenario-based testing, and targeted training frameworks to enhance code generation accuracy and algorithmic proficiency."
+    },
+    {
+      "header": "Data Entry Clerk // Covo Connect // Full time // Jun 2023 - Jul 2023.",
+      "body": "Entering banking data from photos to text, improving touch-typing skills."
+    }
+  ],
+  "skills": {
+    "software": [
+      "C / C++",
+      "OOP",
+      "MATLAB",
+      "Assembly",
+      "Rust",
+      "Data Structures",
+      "Algorithms",
+      "Python",
+      "Automation",
+      "Scripting",
+      "Kali Nethunter",
+      "Ubuntu",
+      "Debian",
+      "AI tools",
+      "Qt",
+      "Git & Git-Hub",
+      "Latex."
+    ],
+    "embedded": [
+      "Atmega16/32 (AVR)",
+      "PIC18F2XK20/4XK20 (PIC)",
+      "STM32",
+      "Fundamentals of Embedded Systems",
+      "ARM Cortex-M Architecture",
+      "Embedded C",
+      "FreeRTOS",
+      "I2C",
+      "USART",
+      "SPI",
+      "SOMEIP."
+    ],
+    "digital": ["HDL languages (VHDL, Verilog, System Verilog)."],
+    "web": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "jQuery",
+      "Laravel",
+      "SQL."
+    ]
+  },
+  "projects": {
+    "software": {
+      "main": [
+        {
+          "title": "Concurrent Rust TCP Server with Test Suite Optimization",
+          "detailed": "Developed a multithreaded TCP server in Rust with enhanced client handling and optimized testing.",
+          "short": "Created a multithreaded Rust TCP server with optimized tests.",
+          "key_elements": "Rust, Multithreading, Protocol Buffers, Thread Safety, Non-blocking I/O"
+        },
+        {
+          "title": "SFML Chess Game in C++",
+          "detailed": "Built a chess game using C++ and SFML featuring valid move highlighting and an undo option.",
+          "short": "Built a chess game in C++ with SFML.",
+          "key_elements": "C++, SFML"
+        }
+      ],
+      "shortend": [
+        {
+          "title": "Concurrent Rust TCP Server",
+          "detailed": "Multithreaded TCP server in Rust with optimized testing.",
+          "short": "",
+          "key_elements": "Rust, Multithreading, Protocol Buffers"
+        },
+        {
+          "title": "SFML Chess Game",
+          "detailed": "Chess game in C++ using SFML.",
+          "short": "",
+          "key_elements": "C++, SFML"
+        }
+      ]
+    },
+    "embedded": {
+      "main": [
+        {
+          "title": "FreeRTOS-Based Dual Microcontroller Door Locker",
+          "detailed": "Developed a door security system using two microcontrollers with FreeRTOS, featuring password authentication and I2C EEPROM storage.",
+          "short": "Door security system with FreeRTOS and I2C EEPROM.",
+          "key_elements": "ATMega32, I2C, USART, EEPROM, FreeRTOS"
+        }
+      ],
+      "shortend": [
+        {
+          "title": "FreeRTOS Door Locker",
+          "detailed": "Door security system with FreeRTOS and I2C.",
+          "short": "",
+          "key_elements": "ATMega32, I2C, FreeRTOS"
+        }
+      ]
+    },
+    "digital": {
+      "main": [
+        {
+          "title": "Advanced Digital Multimeter on PCB",
+          "detailed": "Developed a PCB-based digital multimeter capable of measuring voltage, current, and resistance with specified ranges.",
+          "short": "PCB-based digital multimeter.",
+          "key_elements": "ATMega32, PCB, GPIO, LCD, ADC"
+        }
+      ],
+      "shortend": [
+        {
+          "title": "Digital Multimeter",
+          "detailed": "PCB-based multimeter for voltage, current, and resistance.",
+          "short": "",
+          "key_elements": "ATMega32, PCB, ADC"
+        }
+      ]
+    },
+    "web": {
+      "main": [
+        {
+          "title": "Laravel Workshops System",
+          "detailed": "Developed a Laravel-based system to manage workshop sessions, including scheduling, registration, and attendance tracking.",
+          "short": "Laravel system for workshop management.",
+          "key_elements": "Laravel, PHP, MySQL, Bootstrap, Git"
+        }
+      ],
+      "shortend": [
+        {
+          "title": "Laravel Workshops",
+          "detailed": "Laravel system for managing workshops.",
+          "short": "",
+          "key_elements": "Laravel, PHP, MySQL"
+        }
+      ]
+    }
+  },
+  "courses": {
+    "software": {
+      "main": [
+        {
+          "title": "SOME/IP Workshop",
+          "detailed": "Workshop covering SOME/IP protocol with hands-on client-server communication in networked embedded systems.",
+          "short": "Workshop on SOME/IP protocol.",
+          "key_elements": ""
+        }
+      ],
+      "shortend": [
+        {
+          "title": "SOME/IP Workshop",
+          "detailed": "SOME/IP protocol workshop.",
+          "short": "",
+          "key_elements": ""
+        }
+      ]
+    },
+    "embedded": {
+      "main": [
+        {
+          "title": "Advanced Embedded Diploma",
+          "detailed": "Diploma covering ARM Cortex-M4 architecture, embedded system development, device drivers, bootloaders, and automotive protocols.",
+          "short": "Diploma on ARM Cortex-M4 and embedded systems.",
+          "key_elements": ""
+        }
+      ],
+      "shortend": [
+        {
+          "title": "Advanced Embedded Diploma",
+          "detailed": "Diploma covering ARM Cortex-M4 and embedded systems.",
+          "short": "",
+          "key_elements": ""
+        }
+      ]
+    },
+    "digital": {
+      "main": [
+        {
+          "title": "Digital Design and Verification Diploma",
+          "detailed": "Diploma focusing on digital/RTL design, Verilog/SystemVerilog, FPGA design, and verification techniques.",
+          "short": "Diploma on digital design and verification.",
+          "key_elements": ""
+        }
+      ],
+      "shortend": [
+        {
+          "title": "Digital Design Diploma",
+          "detailed": "Diploma on digital design and verification.",
+          "short": "",
+          "key_elements": ""
+        }
+      ]
+    },
+    "web": {
+      "main": [
+        {
+          "title": "Linux Fundamentals",
+          "detailed": "Course covering Linux basics, file management, shell scripting, process control, and web server setup.",
+          "short": "Linux basics and web server setup.",
+          "key_elements": ""
+        }
+      ],
+      "shortend": [
+        {
+          "title": "Linux Fundamentals",
+          "detailed": "Course on Linux basics and web server setup.",
+          "short": "",
+          "key_elements": ""
+        }
+      ]
+    }
+  }
+}
