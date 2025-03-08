@@ -60,9 +60,9 @@
       "SOMEIP."
     ],
     "digital": [
-      "HDL languages (VHDL, Verilog, System Verilog).",
+      "HDL languages (VHDL, Verilog, System Verilog)",
       "FPGA Xilnix",
-      "Linting"
+      "Linting."
     ],
     "web": [
       "HTML5",
@@ -88,7 +88,7 @@
     "Arduino IDE",
     "QT Creator",
     "DataGrip",
-    "Altium"
+    "Altium."
   ],
   "projects": {
     "embedded": [
