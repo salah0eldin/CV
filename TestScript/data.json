@@ -1,8 +1,10 @@
 {
   "specialities": ["software", "embedded", "digital", "web"],
+  "specialOrderProj": ["embedded", "software", "digital", "web"],
+  "specialOrderCourse": ["embedded", "software", "digital"],
   "header": {
     "name": "SALAH-ELDIN HASSEN",
-    "contact": "salah1423161@gmail.com – Giza / Egypt - (+20) 1127709232",
+    "contact": "salah1423161@gmail.com - Giza / Egypt - (+20) 1127709232",
     "links": "https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/ - https://github.com/salah0eldin"
   },
   "summary": [
@@ -57,7 +59,11 @@
       "SPI",
       "SOMEIP."
     ],
-    "digital": ["HDL languages (VHDL, Verilog, System Verilog)."],
+    "digital": [
+      "HDL languages (VHDL, Verilog, System Verilog).",
+      "FPGA Xilnix",
+      "Linting"
+    ],
     "web": [
       "HTML5",
       "CSS3",
@@ -68,164 +74,271 @@
       "SQL."
     ]
   },
+  "tools": [
+    "Visual Studio",
+    "Eclipse",
+    "Cube IDE",
+    "MPLAB Code Configurator",
+    "MATLAB",
+    "Proteus",
+    "Cadence",
+    "Multisim",
+    "Questa/Modelsim",
+    "Vivado",
+    "Arduino IDE",
+    "QT Creator",
+    "DataGrip",
+    "Altium"
+  ],
   "projects": {
-    "software": {
-      "main": [
-        {
-          "title": "Concurrent Rust TCP Server with Test Suite Optimization",
-          "detailed": "Developed a multithreaded TCP server in Rust with enhanced client handling and optimized testing.",
-          "short": "Created a multithreaded Rust TCP server with optimized tests.",
-          "key_elements": "Rust, Multithreading, Protocol Buffers, Thread Safety, Non-blocking I/O"
+    "embedded": [
+      {
+        "title": "FreeRTOS-Based Dual Microcontroller Door Security System",
+        "main": {
+          "description": "Developed a door security system using two microcontrollers with FreeRTOS for efficient task management, Implemented password authentication, I2C-based EEPROM storage, and automated door mechanisms to enhance access control. Integrated PIR sensors for motion detection and an H-bridge for motor control.",
+          "key_elements": [
+            "ATMega32",
+            "I2C",
+            "USART",
+            "EEPROM",
+            "FreeRTOS",
+            "Semaphores",
+            "Queue",
+            "PIR sensor",
+            "H-bridge."
+          ]
         },
-        {
-          "title": "SFML Chess Game in C++",
-          "detailed": "Built a chess game using C++ and SFML featuring valid move highlighting and an undo option.",
-          "short": "Built a chess game in C++ with SFML.",
-          "key_elements": "C++, SFML"
+        "shortend": {
+          "description": "Designed a dual-microcontroller-based door security system with FreeRTOS, password authentication, and automated mechanisms. Utilized I2C EEPROM storage and motion detection for enhanced access control.",
+          "key_elements": [
+            "ATMega32",
+            "I2C",
+            "USART",
+            "EEPROM",
+            "FreeRTOS",
+            "PIR sensor",
+            "H-bridge."
+          ]
         }
-      ],
-      "shortend": [
-        {
-          "title": "Concurrent Rust TCP Server",
-          "detailed": "Multithreaded TCP server in Rust with optimized testing.",
-          "short": "",
-          "key_elements": "Rust, Multithreading, Protocol Buffers"
+      },
+      {
+        "title": "Advanced Digital Multimeter on PCB",
+        "main": {
+          "description": "Developed a digital multimeter capable of measuring voltage (-200V to 200V), current (0.5mA to 2A), and resistance (0Ω to 5MΩ). Designed the circuit from scratch and implemented it on a custom PCB. Integrated an LCD and keypad for user input, with ADC, relays, MUX, and DEMUX for signal processing.",
+          "key_elements": [
+            "ATMega32",
+            "PCB",
+            "GPIO",
+            "LCD",
+            "Keypad",
+            "ADC",
+            "Relays",
+            "MUX",
+            "DEMUX."
+          ]
         },
-        {
-          "title": "SFML Chess Game",
-          "detailed": "Chess game in C++ using SFML.",
-          "short": "",
-          "key_elements": "C++, SFML"
+        "shortend": {
+          "description": "Designed a PCB-based multimeter to measure voltage, current, and resistance, integrating an LCD, keypad, and ADC for signal processing.",
+          "key_elements": [
+            "ATMega32",
+            "PCB",
+            "GPIO",
+            "LCD",
+            "Keypad",
+            "ADC",
+            "Relays",
+            "MUX",
+            "DEMUX."
+          ]
         }
-      ]
-    },
-    "embedded": {
-      "main": [
-        {
-          "title": "FreeRTOS-Based Dual Microcontroller Door Locker",
-          "detailed": "Developed a door security system using two microcontrollers with FreeRTOS, featuring password authentication and I2C EEPROM storage.",
-          "short": "Door security system with FreeRTOS and I2C EEPROM.",
-          "key_elements": "ATMega32, I2C, USART, EEPROM, FreeRTOS"
+      },
+      {
+        "title": "I2C-Integrated Control Unit",
+        "main": {
+          "description": "Designed a control unit to monitor temperature and control a motor using multiple I2C devices, including a temperature sensor, RTC, external EEPROM, and a slave MCU. Developed firmware using MCC for seamless I2C communication.",
+          "key_elements": [
+            "PIC18F46K20",
+            "MCC (MPLAB Code Configurator)",
+            "I2C",
+            "USART",
+            "RTC",
+            "EEPROM."
+          ]
+        },
+        "shortend": {
+          "description": "Developed an I2C-based control unit for temperature monitoring and motor control, integrating RTC, EEPROM, and a slave MCU.",
+          "key_elements": ["PIC18F46K20", "I2C", "USART", "RTC", "EEPROM."]
         }
-      ],
-      "shortend": [
-        {
-          "title": "FreeRTOS Door Locker",
-          "detailed": "Door security system with FreeRTOS and I2C.",
-          "short": "",
-          "key_elements": "ATMega32, I2C, FreeRTOS"
+      }
+    ],
+    "software": [
+      {
+        "title": "Concurrent Rust TCP Server with Test Suite Optimization",
+        "main": {
+          "description": "Developed a multithreaded TCP server in Rust, transitioning from a buggy single-threaded implementation. Improved client handling using Protocol Buffers for structured communication. Optimized the test suite by resolving port conflicts through port isolation and serial execution strategies.",
+          "key_elements": [
+            "Rust",
+            "Multithreading",
+            "Protocol Buffers",
+            "Thread Safety",
+            "Non-blocking I/O."
+          ]
+        },
+        "shortend": {
+          "description": "Designed a multithreaded Rust TCP server with Protocol Buffers and optimized test suite for port conflict resolution.",
+          "key_elements": [
+            "Rust",
+            "Multithreading",
+            "Protocol Buffers",
+            "Thread Safety",
+            "Non-blocking I/O."
+          ]
         }
-      ]
-    },
-    "digital": {
-      "main": [
-        {
-          "title": "Advanced Digital Multimeter on PCB",
-          "detailed": "Developed a PCB-based digital multimeter capable of measuring voltage, current, and resistance with specified ranges.",
-          "short": "PCB-based digital multimeter.",
-          "key_elements": "ATMega32, PCB, GPIO, LCD, ADC"
+      },
+      {
+        "title": "Advanced Tic Tac Toe Game",
+        "main": {
+          "description": "Developed a C++ Tic Tac Toe game featuring user authentication, personalized game history, and AI-driven gameplay using the minimax algorithm. Implemented an interactive GUI with Qt, secure user management with hashing, and performance optimizations. Automated testing was conducted using Qt Test on Github Actions.",
+          "key_elements": [
+            "C++",
+            "Minimax Algorithm",
+            "Secure Hashing",
+            "Qt",
+            "Qt Test",
+            "SQLite",
+            "Git",
+            "GitHub Actions."
+          ]
+        },
+        "shortend": {
+          "description": "Designed a C++ Tic Tac Toe game with AI (minimax), secure user authentication, and an interactive Qt-based GUI.",
+          "key_elements": [
+            "C++",
+            "Minimax Algorithm",
+            "Secure Hashing",
+            "Qt",
+            "SQLite",
+            "Git",
+            "GitHub Actions."
+          ]
         }
-      ],
-      "shortend": [
-        {
-          "title": "Digital Multimeter",
-          "detailed": "PCB-based multimeter for voltage, current, and resistance.",
-          "short": "",
-          "key_elements": "ATMega32, PCB, ADC"
+      },
+      {
+        "title": "Advanced Image Editor with Qt and OpenCV",
+        "main": {
+          "description": "Built a C++ image editor using Qt and OpenCV, supporting cropping, resizing, and various filters (blur, grayscale, sharpen). Designed a dark mode UI with drag-and-drop image loading and real-time editing capabilities.",
+          "key_elements": ["C++", "OpenCV", "Qt."]
+        },
+        "shortend": {
+          "description": "Developed a Qt-based C++ image editor with OpenCV, featuring cropping, resizing, filters, and real-time editing.",
+          "key_elements": ["C++", "OpenCV", "Qt."]
         }
-      ]
-    },
-    "web": {
-      "main": [
-        {
-          "title": "Laravel Workshops System",
-          "detailed": "Developed a Laravel-based system to manage workshop sessions, including scheduling, registration, and attendance tracking.",
-          "short": "Laravel system for workshop management.",
-          "key_elements": "Laravel, PHP, MySQL, Bootstrap, Git"
+      }
+    ],
+    "digital": [
+      {
+        "title": "SPI Slave Interface",
+        "main": {
+          "description": "Designed and implemented an SPI Slave Interface with two variations: an optimized FSM-based version and a required design integrating a debug core. The project includes Verilog design files, test benches, simulation results, lint reports, and constraints.",
+          "key_elements": [
+            "Vivado",
+            "Questasim",
+            "Verilog",
+            "SPI",
+            "Single-Port RAM",
+            "Constraints",
+            "Linting."
+          ]
+        },
+        "shortend": {
+          "description": "Developed an SPI Slave Interface with optimized FSM and debug core integration, including simulation and constraints.",
+          "key_elements": [
+            "Verilog",
+            "SPI",
+            "FSM Design",
+            "Simulation",
+            "Linting."
+          ]
         }
-      ],
-      "shortend": [
-        {
-          "title": "Laravel Workshops",
-          "detailed": "Laravel system for managing workshops.",
-          "short": "",
-          "key_elements": "Laravel, PHP, MySQL"
+      },
+      {
+        "title": "Spartan-6 DSP48A1",
+        "main": {
+          "description": "Developed a DSP48A1 block, a crucial component in digital signal processing. Designed in Verilog and tested using C++ (Created golden modle) and Verilog test benches. The project includes simulation results, lint reports, and automation scripts for verification.",
+          "key_elements": [
+            "Verilog",
+            "DSP48A1",
+            "Digital Signal Processing",
+            "C++ Simulation",
+            "Test Benches",
+            "Linting."
+          ]
+        },
+        "shortend": {
+          "description": "Designed and tested a DSP48A1 digital signal processing block in Verilog with C++ test benches and simulations.",
+          "key_elements": [
+            "Verilog",
+            "DSP48A1",
+            "C++ Simulation",
+            "Test Benches",
+            "Linting."
+          ]
         }
-      ]
-    }
+      }
+    ],
+    "web": [
+      {
+        "title": "Laravel Workshops System",
+        "main": {
+          "description": "Developed a Laravel-based system for managing workshop sessions, enabling creation, scheduling, participant registration, and attendance tracking. Implemented a responsive UI with Bootstrap and ensured data integrity with MySQL.",
+          "key_elements": ["Laravel", "PHP", "MySQL", "Bootstrap", "Git."]
+        },
+        "shortend": {
+          "description": "Built a Laravel system for workshop scheduling, participant management, and attendance tracking.",
+          "key_elements": ["Laravel", "PHP", "MySQL", "Bootstrap", "Git."]
+        }
+      }
+    ]
   },
   "courses": {
-    "software": {
-      "main": [
-        {
-          "title": "SOME/IP Workshop",
-          "detailed": "Workshop covering SOME/IP protocol with hands-on client-server communication in networked embedded systems.",
-          "short": "Workshop on SOME/IP protocol.",
-          "key_elements": ""
+    "embedded": [
+      {
+        "title": "",
+        "main": {
+          "description": "",
+          "key_elements": [""]
+        },
+        "shortend": {
+          "description": "",
+          "key_elements": [""]
         }
-      ],
-      "shortend": [
-        {
-          "title": "SOME/IP Workshop",
-          "detailed": "SOME/IP protocol workshop.",
-          "short": "",
-          "key_elements": ""
+      }
+    ],
+    "software": [
+      {
+        "title": "",
+        "main": {
+          "description": "",
+          "key_elements": [""]
+        },
+        "shortend": {
+          "description": "",
+          "key_elements": [""]
         }
-      ]
-    },
-    "embedded": {
-      "main": [
-        {
-          "title": "Advanced Embedded Diploma",
-          "detailed": "Diploma covering ARM Cortex-M4 architecture, embedded system development, device drivers, bootloaders, and automotive protocols.",
-          "short": "Diploma on ARM Cortex-M4 and embedded systems.",
-          "key_elements": ""
+      }
+    ],
+    "digital": [
+      {
+        "title": "",
+        "main": {
+          "description": "",
+          "key_elements": [""]
+        },
+        "shortend": {
+          "description": "",
+          "key_elements": [""]
         }
-      ],
-      "shortend": [
-        {
-          "title": "Advanced Embedded Diploma",
-          "detailed": "Diploma covering ARM Cortex-M4 and embedded systems.",
-          "short": "",
-          "key_elements": ""
-        }
-      ]
-    },
-    "digital": {
-      "main": [
-        {
-          "title": "Digital Design and Verification Diploma",
-          "detailed": "Diploma focusing on digital/RTL design, Verilog/SystemVerilog, FPGA design, and verification techniques.",
-          "short": "Diploma on digital design and verification.",
-          "key_elements": ""
-        }
-      ],
-      "shortend": [
-        {
-          "title": "Digital Design Diploma",
-          "detailed": "Diploma on digital design and verification.",
-          "short": "",
-          "key_elements": ""
-        }
-      ]
-    },
-    "web": {
-      "main": [
-        {
-          "title": "Linux Fundamentals",
-          "detailed": "Course covering Linux basics, file management, shell scripting, process control, and web server setup.",
-          "short": "Linux basics and web server setup.",
-          "key_elements": ""
-        }
-      ],
-      "shortend": [
-        {
-          "title": "Linux Fundamentals",
-          "detailed": "Course on Linux basics and web server setup.",
-          "short": "",
-          "key_elements": ""
-        }
-      ]
-    }
+      }
+    ]
   }
 }

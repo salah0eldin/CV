@@ -10,6 +10,8 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
 specialities = ["software", "embedded", "digital", "web"]
+specialOrderProj = ["embedded", "software", "digital", "web"]
+specialOrderCourse = ["embedded", "software", "digital"]
 
 #
 # ------------- STYLING HELPERS -------------
@@ -35,7 +37,7 @@ def set_base_style(document):
     paragraph_format.space_after = Pt(0)
 
 
-def set_page_margins(document, margin_in_inches=0.2):
+def set_page_margins(document, margin_in_inches=0.1):
     """
     Sets uniform page margins (top, bottom, left, right).
     Default is 0.3 inches for a compact look.
@@ -119,7 +121,7 @@ def add_bullet_paragraph(
     label="",
     text="",
     bullet_symbol="•",
-    indent_left_inches=0.4,
+    indent_left_inches=0.2,
     indent_right_inches=0,
     indent_hang_inches=0,
     bold_label=True,
@@ -162,7 +164,7 @@ def add_bullet_paragraph(
         text_run.bold = True
 
 
-def add_skills_table(document, skills, specialty_order):
+def add_skills_table(document, skills, specialty_order, tools):
     """
     Adds a table for the skills section without a header row.
     Each row contains:
@@ -182,10 +184,10 @@ def add_skills_table(document, skills, specialty_order):
             cell0 = row.cells[0]
             cell1 = row.cells[1]
 
-            # First cell: specialty name, bold, 11pt, right aligned.
+            # First cell: specialty name, bold, 11pt, left aligned.
             p0 = cell0.paragraphs[0]
             p0.alignment = WD_ALIGN_PARAGRAPH.LEFT
-            p0.paragraph_format.left_indent = Inches(0.2)
+            p0.paragraph_format.left_indent = Inches(0.1)
             run0 = p0.add_run("▪ " + sp.capitalize() + ":")
             run0.bold = True
             run0.font.name = "Arial"
@@ -194,13 +196,39 @@ def add_skills_table(document, skills, specialty_order):
             p1 = cell1.paragraphs[0]
             p1.alignment = WD_ALIGN_PARAGRAPH.LEFT
             p1.paragraph_format.space_after = Pt(3)
+            p1.paragraph_format.left_indent = Inches(-0.05)
             run1 = p1.add_run(" - ".join(skills[sp]))
             run1.font.name = "Arial"
             run1.font.size = Pt(11)
 
             # Adjust column widths (first column remains narrow, second column is increased)
-            cell0.width = Inches(1.3)
+            cell0.width = Inches(1.2)
             cell1.width = Inches(6.8)
+
+    row = table.add_row()
+    cell0 = row.cells[0]
+    cell1 = row.cells[1]
+
+    # First cell: specialty name, bold, 11pt, left aligned.
+    p0 = cell0.paragraphs[0]
+    p0.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    p0.paragraph_format.left_indent = Inches(0.1)
+    run0 = p0.add_run("▪ Tools:")
+    run0.bold = True
+    run0.font.name = "Arial"
+    run0.font.size = Pt(11)
+    # Second cell: skills list, 11pt, left aligned.
+    p1 = cell1.paragraphs[0]
+    p1.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    p1.paragraph_format.space_after = Pt(3)
+    p1.paragraph_format.left_indent = Inches(-0.05)
+    run1 = p1.add_run(" - ".join(tools))
+    run1.font.name = "Arial"
+    run1.font.size = Pt(11)
+
+    # Adjust column widths (first column remains narrow, second column is increased)
+    cell0.width = Inches(1.2)
+    cell1.width = Inches(6.8)
 
     # Remove all borders.
     tbl = table._element
@@ -257,8 +285,8 @@ def build_cv(document, data, specialty=None):
                 label="",
                 text=summary_item,
                 bullet_symbol="",
-                indent_left_inches=0.2,
-                indent_right_inches=0.2,
+                indent_left_inches=0.1,
+                indent_right_inches=0.1,
             )
     add_horizontal_line(document)
 
@@ -272,8 +300,8 @@ def build_cv(document, data, specialty=None):
                 label="",
                 text=edu_item,
                 bullet_symbol="▪",
-                indent_left_inches=0.2,
-                indent_right_inches=0.2,
+                indent_left_inches=0.1,
+                indent_right_inches=0.1,
                 bold=True,
             )
     add_horizontal_line(document)
@@ -288,7 +316,7 @@ def build_cv(document, data, specialty=None):
                 label="",
                 text=work_item["header"],
                 bullet_symbol="▪",
-                indent_left_inches=0.2,
+                indent_left_inches=0.1,
                 justify=False,
                 bold=True,
             )
@@ -297,18 +325,18 @@ def build_cv(document, data, specialty=None):
                 "",
                 work_item["body"],
                 bullet_symbol="•",
-                indent_left_inches=0.4,
-                indent_right_inches=0.2,
+                indent_left_inches=0.2,
+                indent_right_inches=0.1,
             )
     add_horizontal_line(document)
 
-    # ---------- SKILLS (as a table) ----------
+    # ---------- SKILLS and TOOLS (as a table) ----------
     add_section_heading(document, "Skills")
     if specialty:
         specialty_order = [specialty] + [s for s in specialities if s != specialty]
     else:
         specialty_order = specialities
-    add_skills_table(document, data["skills"], specialty_order)
+    add_skills_table(document, data["skills"], specialty_order, data["tools"])
     add_horizontal_line(document)
 
     # ---------- PROJECTS ----------
@@ -316,72 +344,83 @@ def build_cv(document, data, specialty=None):
     projects = data.get("projects", {})
     if specialty:
         if specialty in projects:
-            for proj in projects[specialty].get("main", []):
+            for proj in projects[specialty]:
                 add_bullet_paragraph(
-                    document, proj["title"], bullet_symbol="▪", indent_left_inches=0.3
+                    document,
+                    "",
+                    proj["title"],
+                    bullet_symbol="▪",
+                    indent_left_inches=0.1,
+                    bold=True,
                 )
                 add_bullet_paragraph(
                     document,
-                    "Description: ",
-                    proj["detailed"],
+                    "",
+                    proj["main"]["description"],
                     bullet_symbol="•",
-                    indent_left_inches=0.6,
+                    indent_left_inches=0.2,
+                    justify=True,
                 )
                 add_bullet_paragraph(
                     document,
                     "Key Elements: ",
-                    proj["key_elements"],
+                    ", ".join(proj["main"]["key_elements"]),
                     bullet_symbol="•",
-                    indent_left_inches=0.6,
+                    indent_left_inches=0.2,
                 )
         others = [s for s in specialities if s != specialty]
         for sp_other in others:
             if sp_other in projects:
-                for proj in projects[sp_other].get("shortend", []):
+                for proj in projects[sp_other]:
                     add_bullet_paragraph(
                         document,
+                        "",
                         proj["title"],
                         bullet_symbol="▪",
-                        indent_left_inches=0.3,
+                        indent_left_inches=0.1,
+                        bold=True,
                     )
                     add_bullet_paragraph(
                         document,
-                        "Description: ",
-                        proj["detailed"],
+                        "",
+                        proj["shortend"]["description"],
                         bullet_symbol="•",
-                        indent_left_inches=0.6,
+                        indent_left_inches=0.2,
+                        justify=True,
                     )
                     add_bullet_paragraph(
                         document,
                         "Key Elements: ",
-                        proj["key_elements"],
+                        ", ".join(proj["shortend"]["key_elements"]),
                         bullet_symbol="•",
-                        indent_left_inches=0.6,
+                        indent_left_inches=0.2,
                     )
     else:
-        for sp_general in specialities:
+        for sp_general in specialOrderProj:
             if sp_general in projects:
-                for proj in projects[sp_general].get("main", []):
+                for proj in projects[sp_general]:
                     add_bullet_paragraph(
                         document,
                         label="",
                         text=proj["title"],
                         bullet_symbol="▪",
-                        indent_left_inches=0.3,
+                        indent_left_inches=0.1,
+                        bold=True,
                     )
                     add_bullet_paragraph(
                         document,
-                        "Description: ",
-                        proj["detailed"],
+                        label="",
+                        text=proj["main"]["description"],
                         bullet_symbol="•",
-                        indent_left_inches=0.6,
+                        indent_left_inches=0.2,
+                        justify=True,
                     )
                     add_bullet_paragraph(
                         document,
                         "Key Elements: ",
-                        proj["key_elements"],
+                        ", ".join(proj["main"]["key_elements"]),
                         bullet_symbol="•",
-                        indent_left_inches=0.6,
+                        indent_left_inches=0.2,
                     )
     add_horizontal_line(document)
 
@@ -390,21 +429,21 @@ def build_cv(document, data, specialty=None):
     courses = data.get("courses", {})
     if specialty:
         if specialty in courses:
-            for course in courses[specialty].get("main", []):
+            for course in courses[specialty]:
                 add_bullet_paragraph(
                     document, course["title"], bullet_symbol="▪", indent_left_inches=0.3
                 )
                 add_bullet_paragraph(
                     document,
                     "Description: ",
-                    course["detailed"],
+                    course["main"]["description"],
                     bullet_symbol="•",
                     indent_left_inches=0.6,
                 )
         others = [s for s in specialities if s != specialty]
         for sp_other in others:
             if sp_other in courses:
-                for course in courses[sp_other].get("shortend", []):
+                for course in courses[sp_other]:
                     add_bullet_paragraph(
                         document,
                         course["title"],
@@ -414,14 +453,14 @@ def build_cv(document, data, specialty=None):
                     add_bullet_paragraph(
                         document,
                         "Description: ",
-                        course["detailed"],
+                        course["shortend"]["description"],
                         bullet_symbol="•",
                         indent_left_inches=0.6,
                     )
     else:
-        for sp_general in specialities:
+        for sp_general in specialOrderCourse:
             if sp_general in courses:
-                for course in courses[sp_general].get("main", []):
+                for course in courses[sp_general]:
                     add_bullet_paragraph(
                         document,
                         course["title"],
@@ -431,7 +470,7 @@ def build_cv(document, data, specialty=None):
                     add_bullet_paragraph(
                         document,
                         "Description: ",
-                        course["detailed"],
+                        course["main"]["description"],
                         bullet_symbol="•",
                         indent_left_inches=0.6,
                     )
@@ -490,5 +529,7 @@ if __name__ == "__main__":
         data = json.load(f)
 
     specialities = data.get("specialities", specialities)
+    specialOrderProj = data.get("specialOrderProj", specialOrderProj)
+    specialOrderCourse = data.get("specialOrderCourse", specialOrderCourse)
 
     generate_cv_files(data)
