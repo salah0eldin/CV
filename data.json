@@ -211,7 +211,7 @@
           ]
         },
         "shortend": {
-          "description": "Designed a C++ Tic Tac Toe game with AI (minimax), secure user authentication, and an interactive Qt-based GUI.",
+          "description": "Designed a C++ Tic Tac Toe game with AI (minimax), user authentication, and an interactive Qt-based GUI.",
           "key_elements": [
             "C++",
             "Minimax Algorithm",
