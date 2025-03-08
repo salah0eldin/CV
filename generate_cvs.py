@@ -424,6 +424,22 @@ def build_cv(document, data, specialty=None):
                     )
     add_horizontal_line(document)
 
+    # ------ OTHER PROJECTS -------
+    other_projects = data.get("other_projects", [])
+    if other_projects:
+        add_section_heading(document, "Other Projects")
+        for proj in other_projects:
+            add_bullet_paragraph(
+                document,
+                label="",
+                text=proj,
+                bullet_symbol="▪",
+                indent_left_inches=0.1,
+                justify=True,
+            )
+
+    add_horizontal_line(document)
+
     # ---------- COURSES ----------
     add_section_heading(document, "Courses")
     courses = data.get("courses", {})
@@ -431,51 +447,77 @@ def build_cv(document, data, specialty=None):
         if specialty in courses:
             for course in courses[specialty]:
                 add_bullet_paragraph(
-                    document, course["title"], bullet_symbol="▪", indent_left_inches=0.3
-                )
-                add_bullet_paragraph(
                     document,
-                    "Description: ",
-                    course["main"]["description"],
-                    bullet_symbol="•",
-                    indent_left_inches=0.6,
+                    "",
+                    course["title"],
+                    bullet_symbol="▪",
+                    indent_left_inches=0.1,
+                    bold=True,
                 )
+                for desc in course["main_description"]:
+                    add_bullet_paragraph(
+                        document,
+                        "",
+                        desc,
+                        bullet_symbol="•",
+                        indent_left_inches=0.2,
+                    )
         others = [s for s in specialities if s != specialty]
         for sp_other in others:
             if sp_other in courses:
                 for course in courses[sp_other]:
                     add_bullet_paragraph(
                         document,
+                        "",
                         course["title"],
                         bullet_symbol="▪",
-                        indent_left_inches=0.3,
+                        indent_left_inches=0.1,
+                        bold=True,
                     )
-                    add_bullet_paragraph(
-                        document,
-                        "Description: ",
-                        course["shortend"]["description"],
-                        bullet_symbol="•",
-                        indent_left_inches=0.6,
-                    )
+                    for desc in course["shortend_description"]:
+                        add_bullet_paragraph(
+                            document,
+                            "",
+                            desc,
+                            bullet_symbol="•",
+                            indent_left_inches=0.2,
+                        )
     else:
         for sp_general in specialOrderCourse:
             if sp_general in courses:
                 for course in courses[sp_general]:
                     add_bullet_paragraph(
                         document,
+                        "",
                         course["title"],
                         bullet_symbol="▪",
-                        indent_left_inches=0.3,
+                        indent_left_inches=0.1,
+                        bold=True,
                     )
-                    add_bullet_paragraph(
-                        document,
-                        "Description: ",
-                        course["main"]["description"],
-                        bullet_symbol="•",
-                        indent_left_inches=0.6,
-                    )
+                    for desc in course["main_description"]:
+                        add_bullet_paragraph(
+                            document,
+                            "",
+                            desc,
+                            bullet_symbol="•",
+                            indent_left_inches=0.2,
+                        )
+
     add_horizontal_line(document)
 
+    # ---- Competitions & Activities ------
+    competitions = data.get("competitions")
+    if competitions:
+        add_bullet_paragraph(
+            document,
+            label="Competitions & Activities: ",
+            text=competitions,
+            bullet_symbol="▪",
+            indent_left_inches=0.1,
+            indent_right_inches=0.1,
+            justify=True,
+            bold_label=True,
+        )
 
 #
 # ------------- MAIN FUNCTIONS -------------
@@ -503,8 +545,8 @@ def generate_cv_files(data):
         print("PDF conversion failed:", e)
 
     # Specialized CVs
-    # for sp in specialities:
-    for sp in ["software"]:
+    # for sp in ["software"]:
+    for sp in specialities:
         doc = Document()
         set_page_margins(doc, margin_in_inches=0.3)
         set_base_style(doc)
