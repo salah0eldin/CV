@@ -12,6 +12,7 @@ from docx.oxml.ns import qn
 specialities = ["software", "embedded", "digital", "web"]
 specialOrderProj = ["embedded", "software", "digital", "web"]
 specialOrderCourse = ["embedded", "software", "digital"]
+specialOrderFiles = ["embedded", "software", "digital"]
 
 #
 # ------------- STYLING HELPERS -------------
@@ -546,7 +547,7 @@ def generate_cv_files(data):
 
     # Specialized CVs
     # for sp in ["software"]:
-    for sp in specialities:
+    for sp in specialOrderFiles:
         doc = Document()
         set_page_margins(doc, margin_in_inches=0.3)
         set_base_style(doc)
@@ -573,5 +574,6 @@ if __name__ == "__main__":
     specialities = data.get("specialities", specialities)
     specialOrderProj = data.get("specialOrderProj", specialOrderProj)
     specialOrderCourse = data.get("specialOrderCourse", specialOrderCourse)
+    specialOrderFiles = data.get("specialOrderFiles", specialOrderFiles)
 
     generate_cv_files(data)

@@ -2,6 +2,7 @@
   "specialities": ["software", "embedded", "digital", "web"],
   "specialOrderProj": ["embedded", "software", "digital", "web"],
   "specialOrderCourse": ["embedded", "software", "digital"],
+  "specialOrderFiles": ["embedded", "software", "digital"],
   "header": {
     "name": "SALAH-ELDIN HASSEN",
     "contact": "salah1423161@gmail.com - Giza / Egypt - (+20) 1127709232",
