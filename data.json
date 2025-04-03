@@ -12,7 +12,7 @@
     "Dynamic and adaptable Software Engineer with extensive experience across embedded, digital, and web technologies. Proficient in C/C++ and Python, I excel at leveraging advanced AI tools to transform innovative ideas into robust, production-ready solutions. A fast learner and effective collaborator, I bring a creative, forward-thinking approach to solving complex technical challenges."
   ],
   "education": [
-    "Cairo University Faculty of Engineering, Department of Electronics and Electrical Communication Engineering (CUFE EECE), Maintaining a (Very Good) degree // 2021 - 2026."
+    "Cairo University Faculty of Engineering, Department of Electronics and Electrical Communication Engineering (CUFE EECE), Maintaining a (Very Good) degree."
   ],
   "work_experience": [
     {
@@ -62,6 +62,7 @@
     ],
     "digital": [
       "HDL languages (VHDL, Verilog, System Verilog)",
+      "TCL",
       "FPGA Xilnix",
       "Linting."
     ],
