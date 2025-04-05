@@ -9,10 +9,10 @@
     "links": "https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/ - https://github.com/salah0eldin"
   },
   "summary": [
-    "Dynamic and adaptable Software Engineer with extensive experience across embedded, digital, and web technologies. Proficient in C/C++ and Python, I excel at leveraging advanced AI tools to transform innovative ideas into robust, production-ready solutions. A fast learner and effective collaborator, I bring a creative, forward-thinking approach to solving complex technical challenges."
+    "Dynamic Engineer with a strong foundation in software, embedded systems, and digital design. Skilled in C/C++, Python, and Linux, with a proven ability to develop efficient, innovative solutions."
   ],
   "education": [
-    "Cairo University Faculty of Engineering, Department of Electronics and Electrical Communication Engineering (CUFE EECE), Maintaining a (Very Good) degree."
+    "Cairo University Faculty of Engineering, Department of Electronics and Electrical Communication Engineering (CUFE EECE)."
   ],
   "work_experience": [
     {
@@ -22,10 +22,6 @@
     {
       "header": "Coding AI Trainer // Outlier // Freelancing // Nov 2024 - Dec 2024.",
       "body": "Trained and optimized AI models for coding tasks through iterative evaluation, scenario-based testing, and targeted training frameworks to enhance code generation accuracy and algorithmic proficiency."
-    },
-    {
-      "header": "Data Entry Clerk // Covo Connect // Full time // Jun 2023 - Jul 2023.",
-      "body": "Entering banking data from photos to text, improving touch-typing skills."
     }
   ],
   "skills": {
@@ -40,9 +36,9 @@
       "Python",
       "Automation",
       "Scripting",
+      "Linux",
+      "Fedora",
       "Kali Nethunter",
-      "Ubuntu",
-      "Debian",
       "AI tools",
       "Qt",
       "Git & Git-Hub",
