@@ -300,7 +300,7 @@
   },
   "other_projects": [
     "Multi-CV Generator Script - Automated Multi-CV generation using Python for ATS-friendly resume formatting.",
-    "Simulation & Linting Scripts - Developed Python and batch sc,ripts for running ModelSim simulations, waveform viewing (GTKWave), and linting Verilog files using Qverify.",
+    "Simulation & Linting Scripts - Developed Python and batch scripts for running ModelSim simulations, waveform viewing (GTKWave), and linting Verilog files using Qverify.",
     "Maze-Solving Line-Follower Robot Car - Arduino-based pathfinding robot.",
     "SFML Chess Game - C++ chess game with an interactive GUI."
   ],
