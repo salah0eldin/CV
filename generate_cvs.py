@@ -22,20 +22,20 @@ specialOrderFiles = ["embedded", "software", "digital"]
 def set_base_style(document):
     """
     Sets the base 'Normal' style:
-      - Arial
+      - Roboto
       - 11 pt
       - Single spacing
       - 0 spacing before/after paragraphs
     """
     style = document.styles["Normal"]
     font = style.font
-    font.name = "Arial"
+    font.name = "Roboto"
     font.size = Pt(11)
 
     paragraph_format = style.paragraph_format
     paragraph_format.line_spacing = 1
     paragraph_format.space_before = Pt(0)
-    paragraph_format.space_after = Pt(0)
+    paragraph_format.space_after = Pt(3)
 
 
 def set_page_margins(document, margin_in_inches=0.1):
@@ -74,6 +74,47 @@ def add_horizontal_line(document):
 # ------------- CONTENT HELPERS -------------
 #
 
+def add_hyperlink(paragraph, url, text, font_name="Roboto", font_size=10):
+    """
+    Adds a clickable hyperlink to a paragraph with underlined and blue text (like standard links).
+    """
+    # Create the hyperlink element
+    part = paragraph.part
+    r_id = part.relate_to(url, "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink", is_external=True)
+    hyperlink = OxmlElement("w:hyperlink")
+    hyperlink.set(qn("r:id"), r_id)
+
+    # Create the run for the hyperlink text
+    run = OxmlElement("w:r")
+    rPr = OxmlElement("w:rPr")
+
+    # Apply font styles
+    rFonts = OxmlElement("w:rFonts")
+    rFonts.set(qn("w:ascii"), font_name)
+    rPr.append(rFonts)
+
+    sz = OxmlElement("w:sz")
+    sz.set(qn("w:val"), str(font_size * 2))  # Font size in half-points
+    rPr.append(sz)
+
+    # Add underline
+    u = OxmlElement("w:u")
+    u.set(qn("w:val"), "single")
+    rPr.append(u)
+
+    # Set color to blue (standard link color)
+    color = OxmlElement("w:color")
+    color.set(qn("w:val"), "0000FF")
+    rPr.append(color)
+
+    run.append(rPr)
+    t = OxmlElement("w:t")
+    t.text = text
+    run.append(t)
+    hyperlink.append(run)
+
+    # Add the hyperlink to the paragraph
+    paragraph._p.append(hyperlink)
 
 def add_name_header(document, name_text):
     """
@@ -86,7 +127,7 @@ def add_name_header(document, name_text):
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run(name_text.upper())
     run.bold = True
-    run.font.name = "Arial"
+    run.font.name = "crimson pro"
     run.font.size = Pt(24)
 
 
@@ -98,7 +139,7 @@ def add_centered_line(document, text, font_size=11, bold=False):
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run(text)
     run.bold = bold
-    run.font.name = "Arial"
+    run.font.name = "Roboto"
     run.font.size = Pt(font_size)
 
 
@@ -111,7 +152,7 @@ def add_section_heading(document, heading_text):
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
     run = p.add_run(heading_text.upper())
     run.bold = True
-    run.font.name = "Arial"
+    run.font.name = "crimson pro"
     run.font.size = Pt(13)
     # Add a single blank line after the heading
     # document.add_paragraph("")
@@ -128,7 +169,7 @@ def add_bullet_paragraph(
     bold_label=True,
     justify=True,
     bold=False,
-    space_after=0,
+    space_after=3,
 ):
     """
     Adds a sub-bullet paragraph with a round bullet (default '•' U+2022), "▪"
@@ -146,7 +187,7 @@ def add_bullet_paragraph(
     # Bullet run
     if bullet_symbol != "":
         bullet_run = p.add_run(f"{bullet_symbol} ")
-        bullet_run.font.name = "Arial"
+        bullet_run.font.name = "Roboto"
         bullet_run.font.size = Pt(11)
 
     if label != "":
@@ -154,12 +195,12 @@ def add_bullet_paragraph(
         label_run = p.add_run(label)
         if bold_label:
             label_run.bold = True
-        label_run.font.name = "Arial"
+        label_run.font.name = "Roboto"
         label_run.font.size = Pt(11)
 
     # Text run (normal)
     text_run = p.add_run(text)
-    text_run.font.name = "Arial"
+    text_run.font.name = "Roboto"
     text_run.font.size = Pt(11)
     if bold:
         text_run.bold = True
@@ -191,7 +232,7 @@ def add_skills_table(document, skills, specialty_order, tools):
             p0.paragraph_format.left_indent = Inches(0.1)
             run0 = p0.add_run("▪ " + sp.capitalize() + ":")
             run0.bold = True
-            run0.font.name = "Arial"
+            run0.font.name = "Roboto"
             run0.font.size = Pt(11)
             # Second cell: skills list, 11pt, left aligned.
             p1 = cell1.paragraphs[0]
@@ -199,7 +240,7 @@ def add_skills_table(document, skills, specialty_order, tools):
             p1.paragraph_format.space_after = Pt(3)
             p1.paragraph_format.left_indent = Inches(-0.05)
             run1 = p1.add_run(" - ".join(skills[sp]))
-            run1.font.name = "Arial"
+            run1.font.name = "Roboto"
             run1.font.size = Pt(11)
 
             # Adjust column widths (first column remains narrow, second column is increased)
@@ -216,7 +257,7 @@ def add_skills_table(document, skills, specialty_order, tools):
     p0.paragraph_format.left_indent = Inches(0.1)
     run0 = p0.add_run("▪ Tools:")
     run0.bold = True
-    run0.font.name = "Arial"
+    run0.font.name = "Roboto"
     run0.font.size = Pt(11)
     # Second cell: skills list, 11pt, left aligned.
     p1 = cell1.paragraphs[0]
@@ -224,7 +265,7 @@ def add_skills_table(document, skills, specialty_order, tools):
     p1.paragraph_format.space_after = Pt(3)
     p1.paragraph_format.left_indent = Inches(-0.05)
     run1 = p1.add_run(" - ".join(tools))
-    run1.font.name = "Arial"
+    run1.font.name = "Roboto"
     run1.font.size = Pt(11)
 
     # Adjust column widths (first column remains narrow, second column is increased)
@@ -272,8 +313,22 @@ def build_cv(document, data, specialty=None):
 
     # ---------- HEADER ----------
     add_name_header(document, data["header"]["name"])
-    add_centered_line(document, data["header"]["contact"], font_size=10, bold=True)
-    add_centered_line(document, data["header"]["links"], font_size=10, bold=True)
+
+    p = document.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+    # Add contact information
+    run = p.add_run(data["header"]["contact"])
+    run.bold = True
+    run.font.name = "Roboto"
+    run.font.size = Pt(10)
+
+    # Add hyperlinks with spaces before and after
+    links = data["header"]["links"]
+    for i, (platform, url) in enumerate(links.items()):
+        p.add_run(" - ").font.size = Pt(10)
+        add_hyperlink(p, url, platform)
+
     add_horizontal_line(document)
 
     # ---------- SUMMARY ----------

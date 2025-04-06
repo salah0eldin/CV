@@ -1,12 +1,16 @@
 {
-  "specialities": ["software", "embedded", "digital", "web"],
+  "specialities": ["software", "digital", "embedded", "web"],
   "specialOrderProj": ["embedded", "software", "digital", "web"],
   "specialOrderCourse": ["embedded", "software", "digital"],
   "specialOrderFiles": ["embedded", "software", "digital"],
   "header": {
     "name": "SALAH-ELDIN HASSEN",
-    "contact": "salah1423161@gmail.com - Giza / Egypt - (+20) 1127709232",
-    "links": "https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/ - https://github.com/salah0eldin"
+    "contact": " (+20) 1127709232 - Giza / Egypt",
+    "links": {
+      "salah0eldin.work@gmail.com": "mailto:salah0eldin.work@gmail.com",
+      "Linkedin Profile": "https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/",
+      "Github Profile": "https://github.com/salah0eldin"
+    }
   },
   "summary": [
     "Dynamic Engineer with a strong foundation in software, embedded systems, and digital design. Skilled in C/C++, Python, and Linux, with a proven ability to develop efficient, innovative solutions."
@@ -20,7 +24,7 @@
       "body": "Promoted from Technical Support to Lead Instructor for Arduino and AVR embedded systems, instructing 600+ students in programming and hardware integration with consistently positive feedback."
     },
     {
-      "header": "Coding AI Trainer // Outlier // Freelancing // Nov 2024 - Dec 2024.",
+      "header": "Coding AI Trainer // Outlier // Freelancing // Sep 2024 - Dec 2024.",
       "body": "Trained and optimized AI models for coding tasks through iterative evaluation, scenario-based testing, and targeted training frameworks to enhance code generation accuracy and algorithmic proficiency."
     }
   ],
