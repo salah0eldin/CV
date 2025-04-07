@@ -149,11 +149,11 @@ def add_section_heading(document, heading_text):
     Followed by one blank line.
     """
     p = document.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run(heading_text.upper())
     run.bold = True
     run.font.name = "crimson pro"
-    run.font.size = Pt(13)
+    run.font.size = Pt(16)
     # Add a single blank line after the heading
     # document.add_paragraph("")
 
@@ -326,7 +326,7 @@ def build_cv(document, data, specialty=None):
     # Add hyperlinks with spaces before and after
     links = data["header"]["links"]
     for i, (platform, url) in enumerate(links.items()):
-        p.add_run(" - ").font.size = Pt(10)
+        p.add_run(" | ").font.size = Pt(10)
         add_hyperlink(p, url, platform)
 
     add_horizontal_line(document)

@@ -5,7 +5,7 @@
   "specialOrderFiles": ["embedded", "software", "digital"],
   "header": {
     "name": "SALAH-ELDIN HASSEN",
-    "contact": " (+20) 1127709232 - Giza / Egypt",
+    "contact": " (+20) 1127709232 | Giza / Egypt",
     "links": {
       "salah0eldin.work@gmail.com": "mailto:salah0eldin.work@gmail.com",
       "Linkedin Profile": "https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/",
@@ -20,11 +20,11 @@
   ],
   "work_experience": [
     {
-      "header": "Robotics & Embedded Instructor // Beta Academy // Seasonal // Jan 2023 - Present.",
+      "header": "Robotics & Embedded Instructor | Beta Academy | Seasonal | Jan 2023 - Jan 2025.",
       "body": "Promoted from Technical Support to Lead Instructor for Arduino and AVR embedded systems, instructing 600+ students in programming and hardware integration with consistently positive feedback."
     },
     {
-      "header": "Coding AI Trainer // Outlier // Freelancing // Sep 2024 - Dec 2024.",
+      "header": "Coding AI Trainer | Outlier | Freelancing | Sep 2024 - Dec 2024.",
       "body": "Trained and optimized AI models for coding tasks through iterative evaluation, scenario-based testing, and targeted training frameworks to enhance code generation accuracy and algorithmic proficiency."
     }
   ],
@@ -103,11 +103,7 @@
             "I2C",
             "USART",
             "EEPROM",
-            "FreeRTOS",
-            "Semaphores",
-            "Queue",
-            "PIR sensor",
-            "H-bridge."
+            "FreeRTOS"
           ]
         },
         "shortend": {
@@ -117,9 +113,7 @@
             "I2C",
             "USART",
             "EEPROM",
-            "FreeRTOS",
-            "PIR sensor",
-            "H-bridge."
+            "FreeRTOS"
           ]
         }
       },
@@ -160,7 +154,7 @@
           "description": "Designed a control unit to monitor temperature and control a motor using multiple I2C devices, including a temperature sensor, RTC, external EEPROM, and a slave MCU. Developed firmware using MCC for seamless I2C communication.",
           "key_elements": [
             "PIC18F46K20",
-            "MCC (MPLAB Code Configurator)",
+            "MCC",
             "I2C",
             "USART",
             "RTC",
@@ -175,25 +169,19 @@
     ],
     "software": [
       {
-        "title": "Concurrent Rust TCP Server with Test Suite Optimization",
+        "title": "Concurrent Rust TCP Server",
         "main": {
           "description": "Developed a multithreaded TCP server in Rust, transitioning from a buggy single-threaded implementation. Improved client handling using Protocol Buffers for structured communication. Optimized the test suite by resolving port conflicts through port isolation and serial execution strategies.",
           "key_elements": [
             "Rust",
-            "Multithreading",
-            "Protocol Buffers",
-            "Thread Safety",
-            "Non-blocking I/O."
+            "Multithreading"
           ]
         },
         "shortend": {
           "description": "Designed a multithreaded Rust TCP server with Protocol Buffers and optimized test suite for port conflict resolution.",
           "key_elements": [
             "Rust",
-            "Multithreading",
-            "Protocol Buffers",
-            "Thread Safety",
-            "Non-blocking I/O."
+            "Multithreading"
           ]
         }
       },
@@ -241,7 +229,7 @@
       {
         "title": "SPI Slave Interface",
         "main": {
-          "description": "Designed and implemented an SPI Slave Interface with two variations: an optimized FSM-based version and a required design integrating a debug core. The project includes Verilog design files, test benches, simulation results, lint reports, and constraints.",
+          "description": "Designed a modular and hierarchical architecture for the SPI Slave Interface project, incorporating key components such as the SPI Slave Interface and RAM modules. Developed self-checking testbenches to validate functionality and performance of these modules, ensuring efficient and reliable operation.",
           "key_elements": [
             "Vivado",
             "Questasim",
@@ -270,7 +258,6 @@
           "key_elements": [
             "Verilog",
             "DSP48A1",
-            "Digital Signal Processing",
             "C++ Simulation",
             "Test Benches",
             "Linting."
@@ -311,7 +298,7 @@
   "courses": {
     "embedded": [
       {
-        "title": "Advanced Embedded Diploma // Eng: Ahmed Abdel-Gafar // Dec 2024 - Current.",
+        "title": "Advanced Embedded Diploma | Eng: Ahmed Abdel-Gafar | Dec 2024 - Current.",
         "main_description": [
           "Comprehensive training on ARM Cortex-M4 architecture, debugging, and memory systems.",
           "Embedded systems development covering compilation process, linker script, and startup code.",
@@ -328,7 +315,7 @@
         ]
       },
       {
-        "title": "Embedded PIC Diploma // Eng: Ahmed Abdel-Gafar // Jul 2024 - Sep 2024.",
+        "title": "Embedded PIC Diploma | Eng: Ahmed Abdel-Gafar | Jul 2024 - Sep 2024.",
         "main_description": [
           "Fundamentals of embedded systems, C programming, and embedded development tools.",
           "PIC microcontroller interfacing with full driver implementation using Embedded C.",
@@ -340,7 +327,7 @@
         ]
       },
       {
-        "title": "Embedded AVR Diploma // Eng: Mohammed Tarek // Jun 2024 - Oct 2024.",
+        "title": "Embedded AVR Diploma | Eng: Mohammed Tarek | Jun 2024 - Oct 2024.",
         "main_description": [
           "Fundamentals of embedded systems, C programming, and real-time operating systems (RTOS).",
           "Data structures including linked lists, stacks, and queues, along with software engineering principles.",
@@ -355,7 +342,7 @@
     ],
     "software": [
       {
-        "title": "SOME/IP Workshop // BULLET - Eng/Hazem // OCT 2024 - OCT 2024.",
+        "title": "SOME/IP Workshop | BULLET - Eng/Hazem | OCT 2024 - OCT 2024.",
         "main_description": [
           "Hands-on experience with the SOME/IP protocol through a practical workshop.",
           "Implemented sample client-server communication for networked embedded systems.",
@@ -367,7 +354,7 @@
         ]
       },
       {
-        "title": "Linux Fundamentals // IEEE ASU // Aug 2024 - Sep 2024.",
+        "title": "Linux Fundamentals | IEEE ASU | Aug 2024 - Sep 2024.",
         "main_description": [
           "Learned Linux file management, shell scripting, and user permissions.",
           "Gained skills in process control, package handling, and filesystem management.",
@@ -381,7 +368,7 @@
     ],
     "digital": [
       {
-        "title": "Digital Design Diploma // Eng: Kareem Waseem // Jan 2025 - Mar 2025.",
+        "title": "Digital Design Diploma | Eng: Kareem Waseem | Jan 2025 - Mar 2025.",
         "main_description": [
           "Gained a solid foundation in Digital and RTL Design using Verilog for synthesis and simulation.",
           "Worked with FPGA design flow, including Vivado, IP catalog, and FPGA-based prototyping challenges.",
@@ -394,7 +381,7 @@
         ]
       },
       {
-        "title": "Digital Verification Course // IEEE CUFE // Mar 2025 - Current.",
+        "title": "Digital Verification Course | IEEE CUFE | Mar 2025 - Current.",
         "main_description": [
           "Gained expertise in simulation-based verification using UVM, UVM structures, sequences, and configuration.",
           "Proficient in QuestaSim for simulation, verification planning, functional coverage, and SystemVerilog assertions.",

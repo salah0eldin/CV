@@ -1,1 +1,1 @@
-specialities
+proj
