@@ -1,0 +1,27 @@
+{
+  "work_experience": [
+    {
+      "header": "Data Entry Clerk // Covo Connect // Full time // Jun 2023 - Jul 2023.",
+      "body": "Entering banking data from photos to text, improving touch-typing skills."
+    }
+  ],
+  "summary": [
+    "Dynamic Engineer with a strong foundation in software, embedded systems, and digital design. Skilled in C/C++, Python, and Linux, with a proven ability to develop efficient, innovative solutions."
+  ],
+  "tools": [
+    "Visual Studio",
+    "Eclipse",
+    "Cube IDE",
+    "MPLAB Code Configurator",
+    "MATLAB",
+    "Proteus",
+    "Cadence",
+    "Multisim",
+    "Questa/Modelsim",
+    "Vivado",
+    "Arduino IDE",
+    "QT Creator",
+    "DataGrip",
+    "Altium"
+  ]
+}
