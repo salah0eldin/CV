@@ -262,7 +262,7 @@
       },
       {
         "date": "Mar 2025 - Current",
-        "title": "Digital Verification Course \\texttt{|} IEEE CUFE",
+        "title": "Digital Verification Course \\texttt{|} IEEE CUSB",
         "for": ["software", "embedded"],
         "description": [
             "Studied formal verification, UVM, sequences, configuration, and SystemVerilog assertions.",
