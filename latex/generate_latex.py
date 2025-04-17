@@ -28,6 +28,8 @@ def generate_latex(data, output_file):
         file.write("\\usepackage[scaled=0.92]{helvet}\n")  # Helvetica for sans-serif
         file.write("\\usepackage{courier}\n")  # Courier for monospace
         file.write("\\usepackage{amssymb}\n")  # Include the amssymb package to define \blacksquare
+        file.write("\\usepackage{enumitem}\n")
+        file.write("\\usepackage{setspace}\n")
         file.write("\\geometry{top=0.3in, bottom=0.3in, left=0.3in, right=0.3in}\n")
         file.write("\\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}\n")
         # Reduce the space between lines globally
@@ -77,10 +79,11 @@ def generate_latex(data, output_file):
             file.write("\\vspace{-0.6cm}\n")
 
             # Details as sub bullet points
-            file.write("\\begin{itemize}\n")
-            for detail in details:
-                file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
-            file.write("\\end{itemize}\n")
+            if details:  # Only create itemize if there are details
+                file.write("\\begin{itemize}\n")
+                for detail in details:
+                    file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
+                file.write("\\end{itemize}\n")
 
             file.write("\\vspace{-0.3cm}\n")
         file.write("\\vspace{-0.2cm}\n")
@@ -112,9 +115,10 @@ def generate_latex(data, output_file):
 
             # Body as a paragraph
             # file.write(f"\\noindent {body}\\\\\n")
-            file.write("\\begin{itemize}\n")
-            file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {body}\n")
-            file.write("\\end{itemize}\n")
+            if body:  # Only create itemize if there is body content
+                file.write("\\begin{itemize}\n")
+                file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {body}\n")
+                file.write("\\end{itemize}\n")
 
             file.write("\\vspace{-0.7cm}\n")
 
@@ -139,7 +143,121 @@ def generate_latex(data, output_file):
             file.write(f"\\textbf{{{category}:}} & {' - '.join(skills)} \\\\ \n")
         file.write("\\end{tabular*}\n")
         file.write("\\vspace{0.2cm}\\rule{\\textwidth}{0.3pt}\n")
+
+        i = 0
+        # =============================
+        # Projects Section
+        # =============================
+        file.write("\\vspace{-0.5cm}\n")
+        file.write("\\centering\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont PROJECTS}\n")
+
+        file.write("\\vspace{-0.3cm}\n")
+
+        for category, projects in data.get("projects", {}).items():
+            for project in projects:
+                date = project.get("date", "")
+                title = project.get("title", "")
+                details = project.get("details", [])
+                
+                i+=1
+                if i % 8 == 0:
+                    file.write("\\newpage\n")
+
+                file.write("\\begin{flushleft}\n")
+                file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+                file.write("\\end{flushleft}\n")
+
+                file.write("\\vspace{-0.7cm}\n")
+
+                file.write("\\begin{itemize}\n")
+                for detail in details:
+                    file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
+                file.write("\\end{itemize}\n")
+
+                file.write("\\vspace{-0.5cm}\n")
+        file.write("\\vspace{-0.1cm}\n")
+        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
         
+        # =============================
+        # Other Projects Section
+        # =============================
+        file.write("\\vspace{-0.5cm}\n")
+        file.write("\\centering\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont OTHER PROJECTS}\n")
+
+        file.write("\\vspace{-0.3cm}\n")
+        
+        file.write("\\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]\n")
+        for other_project in data.get("other_projects", []):
+            file.write(f"\\item {other_project}\n")
+        file.write("\\end{itemize}\n")
+
+        file.write("\\vspace{-0.6cm}\n")
+        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+
+        # =============================
+        # Courses Section
+        # =============================
+        file.write("\\vspace{-0.5cm}\n")
+        file.write("\\centering\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont COURSES}\n")
+
+        file.write("\\vspace{-0.3cm}\n")
+
+        for category, courses in data.get("courses", {}).items():
+            for course in courses:
+                date = course.get("date", "")
+                title = course.get("title", "")
+                details = course.get("description", [])
+
+                file.write("\\begin{flushleft}\n")
+                file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+                file.write("\\end{flushleft}\n")
+
+                file.write("\\vspace{-0.7cm}\n")
+
+                file.write("\\begin{itemize}\n")
+                for detail in details:
+                    file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
+                file.write("\\end{itemize}\n")
+
+                file.write("\\vspace{-0.5cm}\n")
+        file.write("\\vspace{-0.1cm}\n")
+        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+
+        # =============================
+        # Other Courses Section
+        # =============================
+        # file.write("\\vspace{-0.5cm}\n")
+        # file.write("\\centering\n")
+        # file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont OTHER COURSES}\n")
+
+        # file.write("\\vspace{-0.3cm}\n")
+        # file.write("\\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]\n")
+        # for other_course in data.get("other_courses", []):
+        #     file.write(f"\\item {other_course}\n")
+        # file.write("\\end{itemize}\n")
+
+        # file.write("\\vspace{-0.6cm}\n")
+        # file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+
+        # =============================
+        # Extra Info Section
+        # =============================
+        file.write("\\vspace{-0.5cm}\n")
+        file.write("\\centering\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont EXTRA INFO}\n")
+
+        file.write("\\vspace{-0.3cm}\n")
+        file.write("\\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]\n")
+        for extra_info in data.get("extra", []):
+            file.write(f"\\item {extra_info}\n")
+        file.write("\\end{itemize}\n")
+
+        file.write("\\vspace{-0.6cm}\n")
+        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+
         file.write("\\end{document}\n")
 
 def generate_special_latex(data, category, output_file):
@@ -157,6 +275,7 @@ def generate_special_latex(data, category, output_file):
         file.write("\\usepackage[scaled=0.92]{helvet}\n")
         file.write("\\usepackage{courier}\n")
         file.write("\\usepackage{amssymb}\n")
+        file.write("\\usepackage{enumitem}\n")
         file.write("\\geometry{top=0.3in, bottom=0.3in, left=0.3in, right=0.3in}\n")
         file.write("\\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}\n")
         file.write("\\linespread{0.8}\n")
@@ -195,10 +314,11 @@ def generate_special_latex(data, category, output_file):
 
             file.write("\\vspace{-0.6cm}\n")
 
-            file.write("\\begin{itemize}\n")
-            for detail in details:
-                file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
-            file.write("\\end{itemize}\n")
+            if details:  # Only create itemize if there are details
+                file.write("\\begin{itemize}\n")
+                for detail in details:
+                    file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
+                file.write("\\end{itemize}\n")
 
             file.write("\\vspace{-0.3cm}\n")
         file.write("\\vspace{-0.2cm}\n")
@@ -224,9 +344,10 @@ def generate_special_latex(data, category, output_file):
 
             file.write("\\vspace{-0.7cm}\n")
 
-            file.write("\\begin{itemize}\n")
-            file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {body}\n")
-            file.write("\\end{itemize}\n")
+            if body:  # Only create itemize if there is body content
+                file.write("\\begin{itemize}\n")
+                file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {body}\n")
+                file.write("\\end{itemize}\n")
 
             file.write("\\vspace{-0.7cm}\n")
 
@@ -257,6 +378,195 @@ def generate_special_latex(data, category, output_file):
 
         file.write("\\end{tabular*}\n")
         file.write("\\vspace{0.2cm}\\rule{\\textwidth}{0.3pt}\n")
+        
+        # =============================
+        # Projects Section
+        # =============================
+        file.write("\\vspace{-0.5cm}\n")
+        file.write("\\centering\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont PROJECTS}\n")
+
+        file.write("\\vspace{-0.3cm}\n")
+
+        # Start with the projects of the given category
+        projects = data.get("projects", {}).get(category.lower(), [])
+        i = 0
+        for project in projects:
+            date = project.get("date", "")
+            title = project.get("title", "")
+            details = project.get("details", [])
+
+            # Force a page break after a certain number of projects (e.g., every 5 projects)
+            if i > 0 and i % 6 == 0:
+                file.write("\\newpage\n")
+
+            file.write("\\begin{flushleft}\n")
+            file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+            file.write("\\end{flushleft}\n")
+
+            file.write("\\vspace{-0.6cm}\n")
+
+            if details:  # Only create itemize if there are details
+                file.write("\\begin{itemize}\n")
+                for detail in details:
+                    file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
+                file.write("\\end{itemize}\n")
+
+            file.write("\\vspace{-0.3cm}\n")
+            i += 1
+
+        # Add the rest of the projects that include the category in their 'for' field
+        for other_category, other_projects in data.get("projects", {}).items():
+            if other_category.lower() != category.lower():
+                for project in other_projects:
+                    if category.lower() in [cat.lower() for cat in project.get("for", [])]:
+                        date = project.get("date", "")
+                        title = project.get("title", "")
+                        details = project.get("details", [])
+
+                        # Force a page break after a certain number of projects (e.g., every 5 projects)
+                        if i > 0 and i % 7 == 0:
+                            file.write("\\newpage\n")
+
+                        file.write("\\begin{flushleft}\n")
+                        file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+                        file.write("\\end{flushleft}\n")
+
+                        file.write("\\vspace{-0.6cm}\n")
+
+                        if details:  # Only create itemize if there are details
+                            file.write("\\begin{itemize}\n")
+                            for detail in details:
+                                file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
+                            file.write("\\end{itemize}\n")
+
+                        file.write("\\vspace{-0.3cm}\n")
+                        i += 1
+
+        file.write("\\vspace{-0.2cm}\n")
+        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+
+        if i <= 7:
+            file.write("\\newpage\n")
+
+        # =============================
+        # Other Projects Section
+        # =============================
+        file.write("\\vspace{-0.5cm}\n")
+        file.write("\\centering\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont OTHER PROJECTS}\n")
+
+        file.write("\\vspace{-0.3cm}\n")
+        
+        file.write("\\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]\n")
+        for other_project in data.get("other_projects", []):
+            file.write(f"\\item {other_project}\n")
+
+        for category_p, projects in data.get("projects", {}).items():
+            for project in projects:
+                if category.lower() != category_p.lower() and category.lower() not in [cat.lower() for cat in project.get("for", [])]:
+                    title = project.get("title", "")
+                    file.write(f"\\item {title}\n")
+
+        file.write("\\end{itemize}\n")
+
+        file.write("\\vspace{-0.6cm}\n")
+        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+
+        othercourses = []
+        # =============================
+        # Courses Section
+        # =============================
+        file.write("\\vspace{-0.5cm}\n")
+        file.write("\\centering\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont COURSES}\n")
+
+        file.write("\\vspace{-0.3cm}\n")
+
+        # Start with the courses of the given category
+        courses = data.get("courses", {}).get(category.lower(), [])
+        for course in courses:
+            date = course.get("date", "")
+            title = course.get("title", "")
+            details = course.get("description", [])
+
+            file.write("\\begin{flushleft}\n")
+            file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+            file.write("\\end{flushleft}\n")
+
+            file.write("\\vspace{-0.7cm}\n")
+
+            file.write("\\begin{itemize}\n")
+            for detail in details:
+                file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
+            file.write("\\end{itemize}\n")
+
+            file.write("\\vspace{-0.5cm}\n")
+
+        # Add the rest of the courses that include the category in their 'for' field
+        for other_category, other_courses in data.get("courses", {}).items():
+            if other_category.lower() != category.lower():
+                for course in other_courses:
+                    if category.lower() in [cat.lower() for cat in course.get("for", [])]:
+                        date = course.get("date", "")
+                        title = course.get("title", "")
+                        details = course.get("description", [])
+
+                        file.write("\\begin{flushleft}\n")
+                        file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+                        file.write("\\end{flushleft}\n")
+
+                        file.write("\\vspace{-0.7cm}\n")
+
+                        file.write("\\begin{itemize}\n")
+                        for detail in details:
+                            file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {detail}\n")
+                        file.write("\\end{itemize}\n")
+
+                        file.write("\\vspace{-0.5cm}\n")
+                    else:
+                        othercourses += [course.get("title", "")] 
+
+        file.write("\\vspace{-0.1cm}\n")
+        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+
+        # =============================
+        # Other Courses Section
+        # =============================
+        # if othercourses or data.get("other_courses", []):
+        #     file.write("\\vspace{-0.5cm}\n")
+        #     file.write("\\centering\n")
+        #     file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont OTHER COURSES}\n")
+
+        #     file.write("\\vspace{-0.3cm}\n")
+        #     file.write("\\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]\n")
+        #     if data.get("other_courses", []):
+        #         for other_course in data.get("other_courses", []):
+        #             file.write(f"\\item {other_course}\n")
+
+        #     for title in othercourses:
+        #         file.write(f"\\item {title}\n")
+
+        #     file.write("\\end{itemize}\n")
+
+        #     file.write("\\vspace{-0.6cm}\n")
+        #     file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+
+        # =============================
+        # Extra Info Section
+        # =============================
+        file.write("\\vspace{-0.5cm}\n")
+        file.write("\\centering\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont EXTRA INFO}\n")
+
+        file.write("\\vspace{-0.3cm}\n")
+        file.write("\\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]\n")
+        for extra_info in data.get("extra", []):
+            file.write(f"\\item {extra_info}\n")
+        file.write("\\end{itemize}\n")
+
+        file.write("\\vspace{-0.6cm}\n")
+        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
 
         file.write("\\end{document}\n")
 

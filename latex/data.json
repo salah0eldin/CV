@@ -1,14 +1,12 @@
 {
   "specialities": ["software", "digital", "embedded", "web"],
-  "specialOrderProj": ["embedded", "software", "digital", "web"],
-  "specialOrderCourse": ["embedded", "software", "digital"],
   "specialOrderFiles": ["embedded", "software", "digital"],
   "header": {
     "name": "SALAH-ELDIN HASSEN",
     "contact": " (+20) 1127709232 \\texttt{|} Giza / Egypt \\texttt{|} ",
     "links": {
       "salah0eldin.work@gmail.com": "mailto:salah0eldin.work@gmail.com",
-      "Linkedin Profile": "https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/",
+      "LinkedIn Profile": "https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/",
       "Github Profile": "https://github.com/salah0eldin"
     }
   },
@@ -27,7 +25,7 @@
     {
       "date": "Apr 2025 - Current",
       "header": "Autonomous Embedded Member \\texttt{|} Cairo University Eco Racing Team \\texttt{|} Part-time",
-      "body": "Mainly debugging and handling the communication between the Ecus via CAN protocol."
+      "body": "Mainly debugging and handling the communication between the ECUs via CAN protocol."
     },
     {
       "date": "Jan 2023 - Jan 2025",
@@ -51,7 +49,7 @@
       "AI tools",
       "Qt",
       "Git \\& GitHub",
-      "Latex."
+      "LaTeX."
     ],
     "Embedded": [
       "STM32",
@@ -68,7 +66,7 @@
     "Digital": [
       "HDL languages (VHDL, Verilog, System Verilog)",
       "TCL",
-      "FPGA Xilnix",
+      "FPGA Xilinx",
       "Linting."
     ],
     "Web": [
@@ -78,9 +76,10 @@
       "Bootstrap",
       "jQuery",
       "Laravel",
-      "SQL."
+      "SQL",
+      "JSON."
     ],
-    "OS": ["Linux (Fedora(main), Kali Nethunter, Ubuntu)", "Windows"]
+    "OS": ["Linux (Fedora(main), Kali Nethunter, Ubuntu)", "Windows."]
   },
   "projects": {
     "embedded": [
@@ -88,8 +87,8 @@
         "date": "Summer 2024",
         "title": "FreeRTOS-Based Dual Microcontroller Door Security System",
         "details": [
-          "Designed and implemented password authentication, EEPROM storage via I2C, and automated door control mechanisms.",
-          "ATMega32, I2C, USART, EEPROM, FreeRTOS"
+          "Implemented password authentication, EEPROM storage via I2C, and automated door control mechanisms.",
+          "ATMega32 - I2C - USART - EEPROM - FreeRTOS."
         ],
         "for": ["software", "digital"]
       },
@@ -97,9 +96,9 @@
         "date": "Spring 2024",
         "title": "Advanced Digital Multimeter on PCB",
         "details": [
-          "measuring voltage (-200V to 200V), current (0.5mA to 2A), and resistance (0Ω to 5MΩ)",
+          "Measuring voltage (-200V to 200V), current (0.5mA to 2A), and resistance (0ohm to 5Mohm).",
           "Designed the circuit from scratch and implemented it on a custom PCB.",
-          "ATMega32, PCB, GPIO, LCD, Keypad, ADC, Relays, MUX, DEMUX."
+          "ATMega32 - PCB - GPIO - LCD - Keypad - ADC - Relays - MUX - DEMUX."
         ],
         "for": ["digital"]
       },
@@ -108,7 +107,7 @@
         "title": "I2C-Integrated Control Unit",
         "details": [
           "Developed a control unit for temperature monitoring and motor control using I2C devices with MCC firmware.",
-          "PIC18F46K20, MCC, I2C, USART, RTC, EEPROM."
+          "PIC18F46K20 - MCC - I2C - USART - RTC - EEPROM."
         ],
         "for": ["software", "digital"]
       }
@@ -116,10 +115,29 @@
     "software": [
       {
         "date": "Winter 2024",
+        "title": "Simulation \\& Linting Scripts",
+        "details": [
+          "Developed Python and bash scripts for creating do files, running ModelSim, waveform viewing (GTKWave).",
+          "Created Python script that creates TCL files for linting designs using Qverify.",
+          "Python - bash - TCL - GTKWave - Qverify."
+        ],
+        "for": ["embedded", "digital"]
+      },
+      {
+        "date": "Spring 2025",
+        "title": "Multi-CV Generator Script",
+        "details": [
+          "Developed a Python script to generate ATS-friendly LaTeX CVs from JSON data (used to generate this CV).",
+          "Python - LaTeX - JSON."
+        ],
+        "for": ["embedded", "digital"]
+      },
+      {
+        "date": "Winter 2024",
         "title": "Concurrent Rust TCP Server",
         "details": [
           "Developed a multithreaded Rust TCP server, resolving port conflicts and optimizing client handling.",
-          "Rust, Multithreading"
+          "Rust - Multithreading."
         ],
         "for": ["embedded", "digital"]
       },
@@ -129,7 +147,7 @@
         "details": [
           "Created the game with AI (minimax), user authentication, game history, and a Qt-based GUI.",
           "Automated testing via Qt Test and GitHub Actions.",
-          "C++, Minimax Algorithm, Secure Hashing, Qt, Qt Test, SQLite, Git, GitHub Actions."
+          "C++ - Minimax Algorithm - Secure Hashing - Qt - Qt Test - SQLite - Git - GitHub Actions."
         ],
         "for": ["embedded", "digital"]
       },
@@ -137,28 +155,28 @@
         "date": "Summer 2023",
         "title": "Advanced Image Editor with Qt and OpenCV",
         "details": [
-          "Developed with Qt and OpenCV, featuring cropping, resizing, filters, and a dark mode UI with real-time editing.",
-          "C++, OpenCV, Qt."
+          "Featuring cropping, resizing, filters, and a dark mode UI with real-time editing.",
+          "C++ - OpenCV - Qt."
         ],
         "for": []
       }
     ],
     "digital": [
       {
-        "date": "Winter 2024",
+        "date": "Spring 2025",
         "title": "SPI Slave Interface",
         "details": [
-          "Designed a modular SPI Slave Interface with RAM modules and validated functionality using self-checking testbenches.",
-          "Vivado, Questasim, Verilog, SPI, Single-Port RAM, Constraints, Linting."
+          "Designed a modular SPI Slave Interface with RAM modules and validated using self-checking testbenches.",
+          "Vivado - Questasim - Verilog - SPI - Single-Port RAM - Constraints - Linting."
         ],
         "for": ["embedded", "software"]
       },
       {
-        "date": "Winter 2024",
+        "date": "Spring 2025",
         "title": "Spartan-6 DSP48A1",
         "details": [
           "Designed and tested a DSP48A1 block in Verilog with C++ golden model and Verilog test benches.",
-          "Verilog, DSP48A1, C++ Simulation, Test Benches, Linting."
+          "Verilog - DSP48A1 - C++ Simulation - Test Benches - Linting."
         ],
         "for": ["embedded", "software"]
       }
@@ -168,117 +186,95 @@
         "date": "Fall 2024",
         "title": "Laravel Workshops System",
         "details": [
-          "Built a Laravel system for managing workshops with scheduling, registration, attendance tracking, and a responsive UI.",
-          "Laravel, PHP, MySQL, Bootstrap, Git."
+          "Built a system for managing workshops with scheduling, registration, attendance, and a responsive UI.",
+          "Laravel - PHP - MySQL - Bootstrap - Git."
         ],
         "for": ["software"]
       }
     ]
   },
   "other_projects": [
-    "Multi-CV Generator Script - Automated Multi-CV generation using Python to generate Latex cvs for ATS-friendly resume formatting.",
-    "Simulation \\& Linting Scripts - Developed Python and batch scripts for running ModelSim simulations, waveform viewing (GTKWave), and linting Verilog files using Qverify.",
+    "MATLAB Signal Processing and Simulink Control System Projects.",
+    "Analog IC Design Projects on Cadence.",
     "Maze-Solving Line-Follower Robot Car - Arduino-based pathfinding robot.",
     "SFML Chess Game - C++ chess game with an interactive GUI."
   ],
   "courses": {
     "embedded": [
       {
-        "title": "Advanced Embedded Diploma \\texttt{|} Eng: Ahmed Abdel-Gafar \\texttt{|} Dec 2024 - Current.",
-        "main_description": [
-          "Comprehensive training on ARM Cortex-M4 architecture, debugging, and memory systems.",
-          "Embedded systems development covering compilation process, linker script, and startup code.",
-          "Device driver development for GPIO, RCC, SysTick Timer, Flash Memory Interface, and NVIC.",
-          "Bootloader design, implementation, and testing for embedded applications.",
-          "Automotive communication protocols including LIN and CAN.",
-          "Introduction to AUTOSAR fundamentals, layered architecture, and modular programming.",
-          "Compliance with MISRA C standards for secure and reliable embedded development."
-        ],
-        "shortend_description": [
-          "Comprehensive training on ARM Cortex-M4, embedded development, and device drivers.",
-          "Bootloader implementation, automotive protocols (LIN, CAN), and AUTOSAR fundamentals.",
-          "MISRA C compliance for secure embedded software development."
+        "date": "Dec 2024 - Current",
+        "title": "Advanced Embedded Diploma \\texttt{|} Eng: Ahmed Abdel-Gafar",
+        "for": ["software", "digital"], 
+        "description": [
+          "ARM Cortex-M4 architecture, debugging, memory systems, and the compilation process.",
+          "Linker script, startup code, and device driver development for GPIO, RCC, SysTick Timer, and NVIC.",
+          "Flash Memory Interface, bootloader design, implementation, and testing.",
+          "LIN and CAN communication protocols, AUTOSAR architecture, and MISRA C compliance."
         ]
       },
       {
-        "title": "Embedded PIC Diploma \\texttt{|} Eng: Ahmed Abdel-Gafar \\texttt{|} Jul 2024 - Sep 2024.",
-        "main_description": [
-          "Fundamentals of embedded systems, C programming, and embedded development tools.",
-          "PIC microcontroller interfacing with full driver implementation using Embedded C.",
-          "Communication protocols including USART, SPI, and I2C."
-        ],
-        "shortend_description": [
-          "Training on embedded systems, PIC microcontrollers, and Embedded C.",
-          "Implemented drivers and worked with USART, SPI, and I2C protocols."
+        "date": "Jul 2024 - Sep 2024",
+        "title": "Embedded PIC Diploma \\texttt{|} Eng: Ahmed Abdel-Gafar",
+        "for": [],
+        "description": [
+          "Embedded systems fundamentals, C programming, and PIC microcontroller driver development.",
+          "Implemented USART, SPI, and I2C communication protocols using Embedded C."
         ]
       },
       {
-        "title": "Embedded AVR Diploma \\texttt{|} Eng: Mohammed Tarek \\texttt{|} Jun 2024 - Oct 2024.",
-        "main_description": [
-          "Fundamentals of embedded systems, C programming, and real-time operating systems (RTOS).",
-          "Data structures including linked lists, stacks, and queues, along with software engineering principles.",
-          "AVR microcontroller interfacing with full driver implementation using Embedded C.",
-          "Hands-on hardware labs for practical embedded systems development."
-        ],
-        "shortend_description": [
-          "Training on embedded systems, RTOS, and AVR microcontroller interfacing.",
-          "Implemented drivers, worked with Embedded C, and practiced data structures."
+        "date": "Jun 2024 - Oct 2024",
+        "title": "Embedded AVR Diploma \\texttt{|} Eng: Mohammed Tarek",
+        "for": [],
+        "description": [
+          "Embedded systems fundamentals, C programming, RTOS, and data structures (linked lists, stacks, queues).",
+          "AVR microcontroller interfacing with driver implementation using Embedded C and hands-on hardware labs."
         ]
       }
     ],
     "software": [
       {
-        "title": "SOME/IP Workshop \\texttt{|} BULLET - Eng/Hazem \\texttt{|} OCT 2024 - OCT 2024.",
-        "main_description": [
-          "Hands-on experience with the SOME/IP protocol through a practical workshop.",
-          "Implemented sample client-server communication for networked embedded systems.",
-          "Explored service-oriented middleware for automotive and IoT applications."
-        ],
-        "shortend_description": [
-          "Practical workshop on SOME/IP protocol and client-server communication.",
-          "Focused on service-oriented middleware for automotive and IoT applications."
+        "date": "Oct 2024",
+        "title": "SOME/IP Workshop \\texttt{|} BULLET - Eng/Hazem",
+        "for": ["embedded", "digital"],
+        "description": [
+          "Practical SOME/IP protocol workshop with client-server communication for automotive/IoT."
         ]
       },
       {
-        "title": "Linux Fundamentals \\texttt{|} IEEE ASU \\texttt{|} Aug 2024 - Sep 2024.",
-        "main_description": [
+        "date": "Aug 2024 - Sep 2024",
+        "title": "Linux Fundamentals \\texttt{|} IEEE ASU",
+        "for": ["embedded", "digital"],
+        "description": [
           "Learned Linux file management, shell scripting, and user permissions.",
-          "Gained skills in process control, package handling, and filesystem management.",
-          "Developed expertise in Linux networking, SSH, and web server setup."
-        ],
-        "shortend_description": [
-          "Covered Linux file management, shell scripting, and system operations.",
-          "Learned networking, SSH, and web server setup."
+          "Gained skills in process control, package handling, and SSH."
         ]
       }
     ],
     "digital": [
       {
-        "title": "Digital Design Diploma \\texttt{|} Eng: Kareem Waseem \\texttt{|} Jan 2025 - Mar 2025.",
-        "main_description": [
-          "Gained a solid foundation in Digital and RTL Design using Verilog for synthesis and simulation.",
-          "Worked with FPGA design flow, including Vivado, IP catalog, and FPGA-based prototyping challenges.",
-          "Learned Static Timing Analysis (STA), clock domain crossing techniques, and low-power design methodologies.",
-          "Performed code linting and design rule checks using Questa Lint for quality verification."
-        ],
-        "shortend_description": [
-          "Studied Digital/RTL Design with Verilog and FPGA design flow.",
-          "Covered STA, CDC techniques, low-power design concepts, and Questa Lint-based analysis."
+        "date": "Jan 2025 - Mar 2025",
+        "title": "Digital Design Diploma \\texttt{|} Eng: Kareem Waseem",
+        "for": ["software", "embedded"],
+        "description": [
+            "Studied digital and RTL design using Verilog for synthesis and simulation, FPGA design flow, and static timing analysis (STA).",
+            "Worked with Vivado, IP catalog, clock domain crossing, low-power design, and Questa Lint for verification."
         ]
       },
       {
-        "title": "Digital Verification Course \\texttt{|} IEEE CUFE \\texttt{|} Mar 2025 - Current.",
-        "main_description": [
-          "Gained expertise in simulation-based verification using UVM, UVM structures, sequences, and configuration.",
-          "Proficient in QuestaSim for simulation, verification planning, functional coverage, and SystemVerilog assertions.",
-          "Studying formal verification techniques, clock domain crossing analysis, and debugging FPGA-based designs."
-        ],
-        "shortend_description": [
-          "Training in UVM-based verification, functional coverage, and SystemVerilog assertions.",
-          "Working with QuestaSim, formal verification, and FPGA debugging techniques."
+        "date": "Mar 2025 - Current",
+        "title": "Digital Verification Course \\texttt{|} IEEE CUFE",
+        "for": ["software", "embedded"],
+        "description": [
+            "Studied formal verification, UVM, sequences, configuration, and SystemVerilog assertions.",
+            "Used QuestaSim for simulation, verification planning, and functional coverage."
         ]
       }
     ]
   },
-  "competitions": "First place in Robotics Competition (2022), ECPC Contestant (2022, 2023), NASA Hackathon participant."
+  "other_courses": [],
+  "extra": [
+    "First place in Robotics Competition (2022), ECPC Contestant (2022, 2023), NASA Hackathon participant.",
+    "Started coding and using Linux in high school (7 years ago); coding has since become a natural skill.",
+    "A dynamic and adaptable software engineer with a passion for solving problems and learning."
+  ]
 }

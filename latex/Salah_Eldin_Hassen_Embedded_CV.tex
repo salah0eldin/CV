@@ -5,13 +5,14 @@
 \usepackage[scaled=0.92]{helvet}
 \usepackage{courier}
 \usepackage{amssymb}
+\usepackage{enumitem}
 \geometry{top=0.3in, bottom=0.3in, left=0.3in, right=0.3in}
 \hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
 \linespread{0.8}
 \begin{document}
 \begin{center}
 \fontsize{22}{22}\textbf{SALAH-ELDIN HASSEN}\\[0.2cm]
-\fontsize{11}{12}\textbf{ (+20) 1127709232 \texttt{|} Giza / Egypt \texttt{|}  \href{mailto:salah0eldin.work@gmail.com}{salah0eldin.work@gmail.com} \texttt{{|}} \href{https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/}{Linkedin Profile} \texttt{{|}} \href{https://github.com/salah0eldin}{Github Profile}}\\[-0.1cm]
+\fontsize{11}{12}\textbf{ (+20) 1127709232 \texttt{|} Giza / Egypt \texttt{|}  \href{mailto:salah0eldin.work@gmail.com}{salah0eldin.work@gmail.com} \texttt{{|}} \href{https://www.linkedin.com/in/salah-eldin-hassen-5bba10250/}{LinkedIn Profile} \texttt{{|}} \href{https://github.com/salah0eldin}{Github Profile}}\\[-0.1cm]
 \rule{\textwidth}{0.3pt}\\
 \end{center}
 \vspace{-0.9cm}
@@ -42,7 +43,7 @@
 \end{flushleft}
 \vspace{-0.7cm}
 \begin{itemize}
-\item \setlength{\itemsep}{-0.0em} Mainly debugging and handling the communication between the Ecus via CAN protocol.
+\item \setlength{\itemsep}{-0.0em} Mainly debugging and handling the communication between the ECUs via CAN protocol.
 \end{itemize}
 \vspace{-0.7cm}
 \begin{flushleft}
@@ -71,10 +72,196 @@
 \renewcommand{\arraystretch}{1.8} % Adjust row spacing
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l l}
 \textbf{Embedded:} & STM32 - ARM Cortex-M - AVR - PIC - FreeRTOS - I2C - USART - SPI - CAN - SOMEIP. \\ 
-\textbf{Software:} & C/C++ - Python - MATLAB - OOP - Automation - Scripting - AI tools - Qt - Git \& GitHub - Latex. \\ 
-\textbf{Digital:} & HDL languages (VHDL, Verilog, System Verilog) - TCL - FPGA Xilnix - Linting. \\ 
-\textbf{Web:} & HTML5 - CSS3 - JavaScript - Bootstrap - jQuery - Laravel - SQL. \\ 
-\textbf{OS:} & Linux (Fedora(main), Kali Nethunter, Ubuntu) - Windows \\ 
+\textbf{Software:} & C/C++ - Python - MATLAB - OOP - Automation - Scripting - AI tools - Qt - Git \& GitHub - LaTeX. \\ 
+\textbf{Digital:} & HDL languages (VHDL, Verilog, System Verilog) - TCL - FPGA Xilinx - Linting. \\ 
+\textbf{Web:} & HTML5 - CSS3 - JavaScript - Bootstrap - jQuery - Laravel - SQL - JSON. \\ 
+\textbf{OS:} & Linux (Fedora(main), Kali Nethunter, Ubuntu) - Windows. \\ 
 \end{tabular*}
 \vspace{0.2cm}\rule{\textwidth}{0.3pt}
+\vspace{-0.5cm}
+\centering
+\section*{\fontsize{14}{18}\textbf\selectfont PROJECTS}
+\vspace{-0.3cm}
+\begin{flushleft}
+\textbf{FreeRTOS-Based Dual Microcontroller Door Security System}\hfill\textit{Summer 2024}\\
+\end{flushleft}
+\vspace{-0.6cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Implemented password authentication, EEPROM storage via I2C, and automated door control mechanisms.
+\item \setlength{\itemsep}{-0.0em} ATMega32 - I2C - USART - EEPROM - FreeRTOS.
+\end{itemize}
+\vspace{-0.3cm}
+\begin{flushleft}
+\textbf{Advanced Digital Multimeter on PCB}\hfill\textit{Spring 2024}\\
+\end{flushleft}
+\vspace{-0.6cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Measuring voltage (-200V to 200V), current (0.5mA to 2A), and resistance (0ohm to 5Mohm).
+\item \setlength{\itemsep}{-0.0em} Designed the circuit from scratch and implemented it on a custom PCB.
+\item \setlength{\itemsep}{-0.0em} ATMega32 - PCB - GPIO - LCD - Keypad - ADC - Relays - MUX - DEMUX.
+\end{itemize}
+\vspace{-0.3cm}
+\begin{flushleft}
+\textbf{I2C-Integrated Control Unit}\hfill\textit{Summer 2024}\\
+\end{flushleft}
+\vspace{-0.6cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Developed a control unit for temperature monitoring and motor control using I2C devices with MCC firmware.
+\item \setlength{\itemsep}{-0.0em} PIC18F46K20 - MCC - I2C - USART - RTC - EEPROM.
+\end{itemize}
+\vspace{-0.3cm}
+\begin{flushleft}
+\textbf{Simulation \& Linting Scripts}\hfill\textit{Winter 2024}\\
+\end{flushleft}
+\vspace{-0.6cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Developed Python and bash scripts for creating do files, running ModelSim, waveform viewing (GTKWave).
+\item \setlength{\itemsep}{-0.0em} Created Python script that creates TCL files for linting designs using Qverify.
+\item \setlength{\itemsep}{-0.0em} Python - bash - TCL - GTKWave - Qverify.
+\end{itemize}
+\vspace{-0.3cm}
+\begin{flushleft}
+\textbf{Multi-CV Generator Script}\hfill\textit{Spring 2025}\\
+\end{flushleft}
+\vspace{-0.6cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Developed a Python script to generate ATS-friendly LaTeX CVs from JSON data (used to generate this CV).
+\item \setlength{\itemsep}{-0.0em} Python - LaTeX - JSON.
+\end{itemize}
+\vspace{-0.3cm}
+\begin{flushleft}
+\textbf{Concurrent Rust TCP Server}\hfill\textit{Winter 2024}\\
+\end{flushleft}
+\vspace{-0.6cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Developed a multithreaded Rust TCP server, resolving port conflicts and optimizing client handling.
+\item \setlength{\itemsep}{-0.0em} Rust - Multithreading.
+\end{itemize}
+\vspace{-0.3cm}
+\begin{flushleft}
+\textbf{Advanced Tic Tac Toe Game}\hfill\textit{Spring 2024}\\
+\end{flushleft}
+\vspace{-0.6cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Created the game with AI (minimax), user authentication, game history, and a Qt-based GUI.
+\item \setlength{\itemsep}{-0.0em} Automated testing via Qt Test and GitHub Actions.
+\item \setlength{\itemsep}{-0.0em} C++ - Minimax Algorithm - Secure Hashing - Qt - Qt Test - SQLite - Git - GitHub Actions.
+\end{itemize}
+\vspace{-0.3cm}
+\newpage
+\begin{flushleft}
+\textbf{SPI Slave Interface}\hfill\textit{Spring 2025}\\
+\end{flushleft}
+\vspace{-0.6cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Designed a modular SPI Slave Interface with RAM modules and validated using self-checking testbenches.
+\item \setlength{\itemsep}{-0.0em} Vivado - Questasim - Verilog - SPI - Single-Port RAM - Constraints - Linting.
+\end{itemize}
+\vspace{-0.3cm}
+\begin{flushleft}
+\textbf{Spartan-6 DSP48A1}\hfill\textit{Spring 2025}\\
+\end{flushleft}
+\vspace{-0.6cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Designed and tested a DSP48A1 block in Verilog with C++ golden model and Verilog test benches.
+\item \setlength{\itemsep}{-0.0em} Verilog - DSP48A1 - C++ Simulation - Test Benches - Linting.
+\end{itemize}
+\vspace{-0.3cm}
+\vspace{-0.2cm}
+\rule{\textwidth}{0.3pt}\\
+\vspace{-0.5cm}
+\centering
+\section*{\fontsize{14}{18}\textbf\selectfont OTHER PROJECTS}
+\vspace{-0.3cm}
+\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]
+\item MATLAB Signal Processing and Simulink Control System Projects.
+\item Analog IC Design Projects on Cadence.
+\item Maze-Solving Line-Follower Robot Car - Arduino-based pathfinding robot.
+\item SFML Chess Game - C++ chess game with an interactive GUI.
+\item Advanced Image Editor with Qt and OpenCV
+\item Laravel Workshops System
+\end{itemize}
+\vspace{-0.6cm}
+\rule{\textwidth}{0.3pt}\\
+\vspace{-0.5cm}
+\centering
+\section*{\fontsize{14}{18}\textbf\selectfont COURSES}
+\vspace{-0.3cm}
+\begin{flushleft}
+\textbf{Advanced Embedded Diploma \texttt{|} Eng: Ahmed Abdel-Gafar}\hfill\textit{Dec 2024 - Current}\\
+\end{flushleft}
+\vspace{-0.7cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} ARM Cortex-M4 architecture, debugging, memory systems, and the compilation process.
+\item \setlength{\itemsep}{-0.0em} Linker script, startup code, and device driver development for GPIO, RCC, SysTick Timer, and NVIC.
+\item \setlength{\itemsep}{-0.0em} Flash Memory Interface, bootloader design, implementation, and testing.
+\item \setlength{\itemsep}{-0.0em} LIN and CAN communication protocols, AUTOSAR architecture, and MISRA C compliance.
+\end{itemize}
+\vspace{-0.5cm}
+\begin{flushleft}
+\textbf{Embedded PIC Diploma \texttt{|} Eng: Ahmed Abdel-Gafar}\hfill\textit{Jul 2024 - Sep 2024}\\
+\end{flushleft}
+\vspace{-0.7cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Embedded systems fundamentals, C programming, and PIC microcontroller driver development.
+\item \setlength{\itemsep}{-0.0em} Implemented USART, SPI, and I2C communication protocols using Embedded C.
+\end{itemize}
+\vspace{-0.5cm}
+\begin{flushleft}
+\textbf{Embedded AVR Diploma \texttt{|} Eng: Mohammed Tarek}\hfill\textit{Jun 2024 - Oct 2024}\\
+\end{flushleft}
+\vspace{-0.7cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Embedded systems fundamentals, C programming, RTOS, and data structures (linked lists, stacks, queues).
+\item \setlength{\itemsep}{-0.0em} AVR microcontroller interfacing with driver implementation using Embedded C and hands-on hardware labs.
+\end{itemize}
+\vspace{-0.5cm}
+\begin{flushleft}
+\textbf{SOME/IP Workshop \texttt{|} BULLET - Eng/Hazem}\hfill\textit{Oct 2024}\\
+\end{flushleft}
+\vspace{-0.7cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Practical SOME/IP protocol workshop with client-server communication for automotive/IoT.
+\end{itemize}
+\vspace{-0.5cm}
+\begin{flushleft}
+\textbf{Linux Fundamentals \texttt{|} IEEE ASU}\hfill\textit{Aug 2024 - Sep 2024}\\
+\end{flushleft}
+\vspace{-0.7cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Learned Linux file management, shell scripting, and user permissions.
+\item \setlength{\itemsep}{-0.0em} Gained skills in process control, package handling, and SSH.
+\end{itemize}
+\vspace{-0.5cm}
+\begin{flushleft}
+\textbf{Digital Design Diploma \texttt{|} Eng: Kareem Waseem}\hfill\textit{Jan 2025 - Mar 2025}\\
+\end{flushleft}
+\vspace{-0.7cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Studied digital and RTL design using Verilog for synthesis and simulation, FPGA design flow, and static timing analysis (STA).
+\item \setlength{\itemsep}{-0.0em} Worked with Vivado, IP catalog, clock domain crossing, low-power design, and Questa Lint for verification.
+\end{itemize}
+\vspace{-0.5cm}
+\begin{flushleft}
+\textbf{Digital Verification Course \texttt{|} IEEE CUFE}\hfill\textit{Mar 2025 - Current}\\
+\end{flushleft}
+\vspace{-0.7cm}
+\begin{itemize}
+\item \setlength{\itemsep}{-0.0em} Studied formal verification, UVM, sequences, configuration, and SystemVerilog assertions.
+\item \setlength{\itemsep}{-0.0em} Used QuestaSim for simulation, verification planning, and functional coverage.
+\end{itemize}
+\vspace{-0.5cm}
+\vspace{-0.1cm}
+\rule{\textwidth}{0.3pt}\\
+\vspace{-0.5cm}
+\centering
+\section*{\fontsize{14}{18}\textbf\selectfont EXTRA INFO}
+\vspace{-0.3cm}
+\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]
+\item First place in Robotics Competition (2022), ECPC Contestant (2022, 2023), NASA Hackathon participant.
+\item Started coding and using Linux in high school (7 years ago); coding has since become a natural skill.
+\item A dynamic and adaptable software engineer with a passion for solving problems and learning.
+\end{itemize}
+\vspace{-0.6cm}
+\rule{\textwidth}{0.3pt}\\
 \end{document}
