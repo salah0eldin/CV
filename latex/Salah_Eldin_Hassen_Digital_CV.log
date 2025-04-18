@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.4.15)  18 APR 2025 01:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.4.15)  18 APR 2025 19:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -378,22 +378,23 @@ hanged.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9457 strings out of 476041
- 148844 string characters out of 5793174
- 1877388 words of memory out of 6000000
- 29786 multiletter control sequences out of 15000+600000
- 530485 words of font info for 81 fonts, out of 8000000 for 9000
+ 9460 strings out of 476041
+ 148873 string characters out of 5793174
+ 1878388 words of memory out of 6000000
+ 29787 multiletter control sequences out of 15000+600000
+ 531000 words of font info for 83 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  75i,6n,76p,432b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/palatino/uplri8a.pfb>
-Output written on Salah_Eldin_Hassen_Digital_CV.pdf (2 pages, 79345 bytes).
+ve/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
+o/uplri8a.pfb>
+Output written on Salah_Eldin_Hassen_Digital_CV.pdf (2 pages, 83471 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  10 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

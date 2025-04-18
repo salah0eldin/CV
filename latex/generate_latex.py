@@ -165,7 +165,10 @@ def generate_latex(data, output_file):
                     file.write("\\newpage\n")
 
                 file.write("\\begin{flushleft}\n")
-                file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+                file.write(f"\\textbf{{{title}}}")
+                if(project.get("link", "")):
+                    file.write(f"\\texttt{{|}} {{\\href{{{project.get('link', '')}}}{{Link}}}}")
+                file.write(f"\\hfill\\textit{{{date}}}\\\\\n")
                 file.write("\\end{flushleft}\n")
 
                 file.write("\\vspace{-0.7cm}\n")
@@ -243,11 +246,11 @@ def generate_latex(data, output_file):
         # file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
 
         # =============================
-        # Extra Info Section
+        # EXTRACURRICULAR ACTIVITY Section
         # =============================
         file.write("\\vspace{-0.5cm}\n")
         file.write("\\centering\n")
-        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont EXTRA INFO}\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont EXTRACURRICULAR ACTIVITY}\n")
 
         file.write("\\vspace{-0.3cm}\n")
         file.write("\\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]\n")
@@ -256,7 +259,7 @@ def generate_latex(data, output_file):
         file.write("\\end{itemize}\n")
 
         file.write("\\vspace{-0.6cm}\n")
-        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+        # file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
 
         file.write("\\end{document}\n")
 
@@ -401,7 +404,10 @@ def generate_special_latex(data, category, output_file):
                 file.write("\\newpage\n")
 
             file.write("\\begin{flushleft}\n")
-            file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+            file.write(f"\\textbf{{{title}}}")
+            if(project.get("link", "")):
+                file.write(f"\\texttt{{|}} {{\\href{{{project.get('link', '')}}}{{Link}}}}")
+            file.write(f"\\hfill\\textit{{{date}}}\\\\\n")
             file.write("\\end{flushleft}\n")
 
             file.write("\\vspace{-0.6cm}\n")
@@ -429,7 +435,10 @@ def generate_special_latex(data, category, output_file):
                             file.write("\\newpage\n")
 
                         file.write("\\begin{flushleft}\n")
-                        file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+                        file.write(f"\\textbf{{{title}}}")
+                        if(project.get("link", "")):
+                            file.write(f"\\texttt{{|}} {{\\href{{{project.get('link', '')}}}{{Link}}}}")
+                        file.write(f"\\hfill\\textit{{{date}}}\\\\\n")
                         file.write("\\end{flushleft}\n")
 
                         file.write("\\vspace{-0.6cm}\n")
@@ -466,7 +475,10 @@ def generate_special_latex(data, category, output_file):
             for project in projects:
                 if category.lower() != category_p.lower() and category.lower() not in [cat.lower() for cat in project.get("for", [])]:
                     title = project.get("title", "")
-                    file.write(f"\\item {title}\n")
+                    file.write(f"\\item {title}")
+                    if(project.get("link", "")):
+                        file.write(f"\\texttt{{|}} {{\\href{{{project.get('link', '')}}}{{Link}}}}")
+                    file.write("\n")
 
         file.write("\\end{itemize}\n")
 
@@ -553,11 +565,11 @@ def generate_special_latex(data, category, output_file):
         #     file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
 
         # =============================
-        # Extra Info Section
+        # EXTRACURRICULAR ACTIVITY Section
         # =============================
         file.write("\\vspace{-0.5cm}\n")
         file.write("\\centering\n")
-        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont EXTRA INFO}\n")
+        file.write("\\section*{\\fontsize{14}{18}\\textbf\\selectfont EXTRACURRICULAR ACTIVITY}\n")
 
         file.write("\\vspace{-0.3cm}\n")
         file.write("\\begin{itemize}[noitemsep, left=0pt, itemsep=5pt]\n")
@@ -566,7 +578,7 @@ def generate_special_latex(data, category, output_file):
         file.write("\\end{itemize}\n")
 
         file.write("\\vspace{-0.6cm}\n")
-        file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
+        # file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
 
         file.write("\\end{document}\n")
 

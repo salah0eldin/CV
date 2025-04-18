@@ -90,7 +90,8 @@
           "Implemented password authentication, EEPROM storage via I2C, and automated door control mechanisms.",
           "ATMega32 - I2C - USART - EEPROM - FreeRTOS."
         ],
-        "for": ["software", "digital"]
+        "for": ["software", "digital"],
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7261751302018244608/"
       },
       {
         "date": "Spring 2024",
@@ -100,7 +101,8 @@
           "Designed the circuit from scratch and implemented it on a custom PCB.",
           "ATMega32 - PCB - GPIO - LCD - Keypad - ADC - Relays - MUX - DEMUX."
         ],
-        "for": ["digital"]
+        "for": ["digital"],
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7227981461818138624/"
       },
       {
         "date": "Summer 2024",
@@ -109,7 +111,8 @@
           "Developed a control unit for temperature monitoring and motor control using I2C devices with MCC firmware.",
           "PIC18F46K20 - MCC - I2C - USART - RTC - EEPROM."
         ],
-        "for": ["software", "digital"]
+        "for": ["software", "digital"],
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7243602012020330497/"
       }
     ],
     "software": [
@@ -121,7 +124,8 @@
           "Created Python script that creates TCL files for linting designs using Qverify.",
           "Python - bash - TCL - GTKWave - Qverify."
         ],
-        "for": ["embedded", "digital"]
+        "for": ["embedded", "digital"],
+        "link": "https://github.com/salah0eldin/Scripts"
       },
       {
         "date": "Spring 2025",
@@ -130,7 +134,8 @@
           "Developed a Python script to generate ATS-friendly LaTeX CVs from JSON data (used to generate this CV).",
           "Python - LaTeX - JSON."
         ],
-        "for": ["embedded", "digital"]
+        "for": ["embedded", "digital"],
+        "link": "https://github.com/salah0eldin/CV"
       },
       {
         "date": "Winter 2024",
@@ -139,7 +144,8 @@
           "Developed a multithreaded Rust TCP server, resolving port conflicts and optimizing client handling.",
           "Rust - Multithreading."
         ],
-        "for": ["embedded", "digital"]
+        "for": ["embedded", "digital"],
+        "link": "https://github.com/salah0eldin/RustTCPServer"
       },
       {
         "date": "Spring 2024",
@@ -149,7 +155,8 @@
           "Automated testing via Qt Test and GitHub Actions.",
           "C++ - Minimax Algorithm - Secure Hashing - Qt - Qt Test - SQLite - Git - GitHub Actions."
         ],
-        "for": ["embedded", "digital"]
+        "for": ["embedded", "digital"],
+        "link": "https://www.linkedin.com/posts/salah-eldin-hassen-5bba10250_qt-cplusplus-softwaredevelopment-activity-7227345922031009793-xhzd/?rcm=ACoAAD4WDF8Bk9P5oS-irdrlv53Rzjd03ps4OSA"
       },
       {
         "date": "Summer 2023",
@@ -158,7 +165,8 @@
           "Featuring cropping, resizing, filters, and a dark mode UI with real-time editing.",
           "C++ - OpenCV - Qt."
         ],
-        "for": []
+        "for": [],
+        "link": "https://github.com/salah0eldin/CODSOFT/tree/main/C%2B%2B/Task5%20-%20ImageProcessing/ImageEdit"
       }
     ],
     "digital": [
@@ -169,7 +177,8 @@
           "Designed a modular SPI Slave Interface with RAM modules and validated using self-checking testbenches.",
           "Vivado - Questasim - Verilog - SPI - Single-Port RAM - Constraints - Linting."
         ],
-        "for": ["embedded", "software"]
+        "for": ["embedded", "software"],
+        "link": "https://github.com/salah0eldin/Digital-Projects/tree/master/SPI_Slave_Interface"
       },
       {
         "date": "Spring 2025",
@@ -178,7 +187,8 @@
           "Designed and tested a DSP48A1 block in Verilog with C++ golden model and Verilog test benches.",
           "Verilog - DSP48A1 - C++ Simulation - Test Benches - Linting."
         ],
-        "for": ["embedded", "software"]
+        "for": ["embedded", "software"],
+        "link": "https://github.com/salah0eldin/Digital-Projects/tree/master/DSP48A1"
       }
     ],
     "web": [
@@ -189,22 +199,25 @@
           "Built a system for managing workshops with scheduling, registration, attendance, and a responsive UI.",
           "Laravel - PHP - MySQL - Bootstrap - Git."
         ],
-        "for": ["software"]
+        "for": ["software"],
+        "link": "https://github.com/salah0eldin/WorkshopsSystem"
       }
     ]
   },
   "other_projects": [
-    "MATLAB Signal Processing and Simulink Control System Projects.",
-    "Analog IC Design Projects on Cadence.",
-    "Maze-Solving Line-Follower Robot Car - Arduino-based pathfinding robot.",
-    "SFML Chess Game - C++ chess game with an interactive GUI."
+    "MATLAB Signal Processing and Simulink Control System Projects",
+    "Analog IC Design Projects on Cadence",
+    "Reverse Tic Tac Toe Game 3x3 and 4x4 using web \\texttt{|} \\href{https://github.com/salah0eldin/Tic_tac_toe_AVOID_THE_X}{Link} \\texttt{|} \\href{https://salah0eldin.github.io/Tic_tac_toe_AVOID_THE_X/}{Game}",
+    "Self Driving Robots - Path Planning \\& Obstacle Avoidance (MATLAB, FMM2, A*) \\texttt{|} \\href{https://github.com/salah0eldin/PathPLanningUsingFMM2andAStar}{Link}",
+    "Maze-Solving Line-Follower Robot Car - Arduino-based pathfinding robot \\texttt{|} \\href{https://github.com/salah0eldin/ArduinoCarLineFollowerMazeSolver-Saver}{Link}",
+    "SFML Chess Game - C++ chess game with an interactive GUI \\texttt{|} \\href{https://github.com/salah0eldin/CHESS_CPP_SFML}{Link}"
   ],
   "courses": {
     "embedded": [
       {
         "date": "Dec 2024 - Current",
         "title": "Advanced Embedded Diploma \\texttt{|} Eng: Ahmed Abdel-Gafar",
-        "for": ["software", "digital"], 
+        "for": ["software", "digital"],
         "description": [
           "ARM Cortex-M4 architecture, debugging, memory systems, and the compilation process.",
           "Linker script, startup code, and device driver development for GPIO, RCC, SysTick Timer, and NVIC.",
@@ -256,8 +269,8 @@
         "title": "Digital Design Diploma \\texttt{|} Eng: Kareem Waseem",
         "for": ["software", "embedded"],
         "description": [
-            "Studied digital and RTL design using Verilog for synthesis and simulation, FPGA design flow, and static timing analysis (STA).",
-            "Worked with Vivado, IP catalog, clock domain crossing, low-power design, and Questa Lint for verification."
+          "Studied digital and RTL design using Verilog for synthesis and simulation, FPGA design flow, and static timing analysis (STA).",
+          "Worked with Vivado, IP catalog, clock domain crossing, low-power design, and Questa Lint for verification."
         ]
       },
       {
@@ -265,16 +278,16 @@
         "title": "Digital Verification Course \\texttt{|} IEEE CUSB",
         "for": ["software", "embedded"],
         "description": [
-            "Studied formal verification, UVM, sequences, configuration, and SystemVerilog assertions.",
-            "Used QuestaSim for simulation, verification planning, and functional coverage."
+          "Studied formal verification, UVM, sequences, configuration, and SystemVerilog assertions.",
+          "Used QuestaSim for simulation, verification planning, and functional coverage."
         ]
       }
     ]
   },
   "other_courses": [],
   "extra": [
-    "First place in Robotics Competition (2022), ECPC Contestant (2022, 2023), NASA Hackathon participant.",
-    "Started coding and using Linux in high school (7 years ago); coding has since become a natural skill.",
-    "A dynamic and adaptable software engineer with a passion for solving problems and learning."
+    "First place in Robotics Competition (2022).",
+    "ECPC Contestant (2022, 2023).",
+    "NASA Hackathon participant."
   ]
 }
