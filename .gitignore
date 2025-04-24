@@ -1,2 +1,4 @@
 *.docx
-
+*.aux
+*.out
+*.log
