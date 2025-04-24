@@ -215,7 +215,10 @@ def generate_latex(data, output_file):
                 details = course.get("description", [])
 
                 file.write("\\begin{flushleft}\n")
-                file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+                file.write(f"\\textbf{{{title}}}")
+                if(course.get("certificate", "")):
+                    file.write(f"\\texttt{{|}} {{\\href{{{course.get('certificate', '')}}}{{Certificate}}}}")
+                file.write(f"\\hfill\\textit{{{date}}}\\\\\n")
                 file.write("\\end{flushleft}\n")
 
                 file.write("\\vspace{-0.7cm}\n")
@@ -503,7 +506,10 @@ def generate_special_latex(data, category, output_file):
             details = course.get("description", [])
 
             file.write("\\begin{flushleft}\n")
-            file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+            file.write(f"\\textbf{{{title}}}")
+            if(course.get("certificate", "")):
+                file.write(f"\\texttt{{|}} {{\\href{{{course.get('certificate', '')}}}{{Certificate}}}}")
+            file.write(f"\\hfill\\textit{{{date}}}\\\\\n")
             file.write("\\end{flushleft}\n")
 
             file.write("\\vspace{-0.7cm}\n")
@@ -525,7 +531,10 @@ def generate_special_latex(data, category, output_file):
                         details = course.get("description", [])
 
                         file.write("\\begin{flushleft}\n")
-                        file.write(f"\\textbf{{{title}}}\\hfill\\textit{{{date}}}\\\\\n")
+                        file.write(f"\\textbf{{{title}}}")
+                        if(course.get("certificate", "")):
+                            file.write(f"\\texttt{{|}} {{\\href{{{course.get('certificate', '')}}}{{Certificate}}}}")
+                        file.write(f"\\hfill\\textit{{{date}}}\\\\\n")
                         file.write("\\end{flushleft}\n")
 
                         file.write("\\vspace{-0.7cm}\n")

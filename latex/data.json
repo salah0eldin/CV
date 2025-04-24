@@ -67,6 +67,7 @@
       "HDL languages (VHDL, Verilog, System Verilog)",
       "TCL",
       "FPGA Xilinx",
+      "SVA",
       "Linting."
     ],
     "Web": [
@@ -223,7 +224,8 @@
           "Linker script, startup code, and device driver development for GPIO, RCC, SysTick Timer, and NVIC.",
           "Flash Memory Interface, bootloader design, implementation, and testing.",
           "LIN and CAN communication protocols, AUTOSAR architecture, and MISRA C compliance."
-        ]
+        ],
+        "certificate": ""
       },
       {
         "date": "Jul 2024 - Sep 2024",
@@ -232,7 +234,8 @@
         "description": [
           "Embedded systems fundamentals, C programming, and PIC microcontroller driver development.",
           "Implemented USART, SPI, and I2C communication protocols using Embedded C."
-        ]
+        ],
+        "certificate": ""
       },
       {
         "date": "Jun 2024 - Oct 2024",
@@ -241,7 +244,8 @@
         "description": [
           "Embedded systems fundamentals, C programming, RTOS, and data structures (linked lists, stacks, queues).",
           "AVR microcontroller interfacing with driver implementation using Embedded C and hands-on hardware labs."
-        ]
+        ],
+        "certificate": ""
       }
     ],
     "software": [
@@ -251,7 +255,8 @@
         "for": ["embedded", "digital"],
         "description": [
           "Practical SOME/IP protocol workshop with client-server communication for automotive/IoT."
-        ]
+        ],
+        "certificate": ""
       },
       {
         "date": "Aug 2024 - Sep 2024",
@@ -260,7 +265,8 @@
         "description": [
           "Learned Linux file management, shell scripting, and user permissions.",
           "Gained skills in process control, package handling, and SSH."
-        ]
+        ],
+        "certificate": ""
       }
     ],
     "digital": [
@@ -271,7 +277,8 @@
         "description": [
           "Studied digital and RTL design using Verilog for synthesis and simulation, FPGA design flow, and static timing analysis (STA).",
           "Worked with Vivado, IP catalog, clock domain crossing, low-power design, and Questa Lint for verification."
-        ]
+        ],
+        "certificate": ""
       },
       {
         "date": "Mar 2025 - Current",
@@ -280,7 +287,8 @@
         "description": [
           "Studied formal verification, UVM, sequences, configuration, and SystemVerilog assertions.",
           "Used QuestaSim for simulation, verification planning, and functional coverage."
-        ]
+        ],
+        "certificate": ""
       }
     ]
   },
