@@ -111,7 +111,7 @@ def generate_latex(data, output_file):
             file.write(f"\\textbf{{{header}}}\\hfill\\textit{{{date}}}\\\\\n")
             file.write("\\end{flushleft}\n")
 
-            file.write("\\vspace{-0.7cm}\n")
+            file.write("\\vspace{-0.6cm}\n")
 
             # Body as a paragraph
             # file.write(f"\\noindent {body}\\\\\n")
@@ -120,7 +120,7 @@ def generate_latex(data, output_file):
                 file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {body}\n")
                 file.write("\\end{itemize}\n")
 
-            file.write("\\vspace{-0.7cm}\n")
+            file.write("\\vspace{-0.5cm}\n")
 
         file.write("\\vspace{0.2cm}\n")
         file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
@@ -348,14 +348,14 @@ def generate_special_latex(data, category, output_file):
             file.write(f"\\textbf{{{header}}}\\hfill\\textit{{{date}}}\\\\\n")
             file.write("\\end{flushleft}\n")
 
-            file.write("\\vspace{-0.7cm}\n")
+            file.write("\\vspace{-0.6cm}\n")
 
             if body:  # Only create itemize if there is body content
                 file.write("\\begin{itemize}\n")
                 file.write(f"\\item \\setlength{{\\itemsep}}{{-0.0em}} {body}\n")
                 file.write("\\end{itemize}\n")
 
-            file.write("\\vspace{-0.7cm}\n")
+            file.write("\\vspace{-0.5cm}\n")
 
         file.write("\\vspace{0.2cm}\n")
         file.write("\\rule{\\textwidth}{0.3pt}\\\\\n")
