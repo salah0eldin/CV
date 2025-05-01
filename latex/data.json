@@ -1,4 +1,5 @@
 {
+  "name": "Salah_Eldin_Hassen",
   "specialities": ["software", "digital", "embedded", "web"],
   "specialOrderFiles": ["embedded", "software", "digital"],
   "header": {
@@ -15,9 +16,7 @@
       "year": "2021 - 2026",
       "title": "Cairo University Faculty of Engineering (CUFE)",
       "details": [
-        "Bachelor of Electronics and Electrical Communications Engineering (EECE).",
-        "Maintained a GPA of 3.3 (Very Good).",
-        "Related Courses:  Logic Design, Microprocessors, Analog IC Design I\\&II, Embedded Systems, Data Structure."
+        "Bachelor of Electronics and Communications (EECE) With Cumulative Grade: (Very Good)."
       ]
     }
   ],
@@ -30,7 +29,7 @@
     {
       "date": "Jan 2023 - Jan 2025",
       "header": "Robotics \\& Embedded Instructor \\texttt{|} Beta Academy \\texttt{|} Seasonal",
-      "body": "Taught Arduino and AVR embedded systems to over 600 students with consistently excellent feedback."
+      "body": "Taught Programming and Arduino to over 600 students with consistently excellent feedback."
     },
     {
       "date": "Sep 2024 - Dec 2024",
@@ -39,48 +38,62 @@
     }
   ],
   "skills": {
-    "Software": [
-      "C/C++",
-      "Python",
-      "MATLAB",
-      "OOP",
-      "Automation",
-      "Scripting",
-      "AI tools",
-      "Qt",
-      "Git \\& GitHub",
-      "LaTeX."
-    ],
-    "Embedded": [
-      "STM32",
-      "ARM Cortex-M",
-      "AVR",
-      "PIC",
-      "FreeRTOS",
-      "I2C",
-      "USART",
-      "SPI",
-      "CAN",
-      "SOMEIP."
-    ],
-    "Digital": [
-      "HDL languages (VHDL, Verilog, System Verilog)",
-      "TCL",
-      "FPGA Xilinx",
-      "SVA",
-      "Linting."
-    ],
-    "Web": [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Bootstrap",
-      "jQuery",
-      "Laravel",
-      "SQL",
-      "JSON."
-    ],
-    "OS": ["Linux (Fedora(main), Kali Nethunter, Ubuntu)", "Windows."]
+    "Software": {
+      "for": ["software", "embedded", "digital"],
+      "data": [
+        "C/C++",
+        "Python",
+        "MATLAB",
+        "OOP",
+        "Automation",
+        "Scripting",
+        "AI tools",
+        "Qt",
+        "Git \\& GitHub",
+        "LaTeX."
+      ]
+    },
+    "Embedded": {
+      "for": ["embedded", "digital"],
+      "data": [
+        "STM32",
+        "ARM Cortex-M",
+        "AVR",
+        "PIC",
+        "FreeRTOS",
+        "I2C",
+        "USART",
+        "SPI",
+        "CAN",
+        "SOMEIP."
+      ]
+    },
+    "Digital": {
+      "for": ["digital", "embedded"],
+      "data": [
+        "HDL languages (VHDL, Verilog, System Verilog)",
+        "TCL",
+        "FPGA Xilinx",
+        "Linting."
+      ]
+    },
+    "Web": {
+      "for": ["software"],
+      "data": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "jQuery",
+        "Laravel",
+        "SQL",
+        "JSON."
+      ]
+    },
+    "OS": {
+      "for": ["software", "embedded", "digital"],
+      "data": ["Linux (Fedora(main), Kali Nethunter, Ubuntu)", "Windows."]
+    }
   },
   "projects": {
     "embedded": [
@@ -91,7 +104,7 @@
           "Implemented password authentication, EEPROM storage via I2C, and automated door control mechanisms.",
           "ATMega32 - I2C - USART - EEPROM - FreeRTOS."
         ],
-        "for": ["software", "digital"],
+        "for": ["digital"],
         "link": "https://www.linkedin.com/feed/update/urn:li:activity:7261751302018244608/"
       },
       {
@@ -102,7 +115,7 @@
           "Designed the circuit from scratch and implemented it on a custom PCB.",
           "ATMega32 - PCB - GPIO - LCD - Keypad - ADC - Relays - MUX - DEMUX."
         ],
-        "for": ["digital"],
+        "for": [],
         "link": "https://www.linkedin.com/feed/update/urn:li:activity:7227981461818138624/"
       },
       {
@@ -112,7 +125,7 @@
           "Developed a control unit for temperature monitoring and motor control using I2C devices with MCC firmware.",
           "PIC18F46K20 - MCC - I2C - USART - RTC - EEPROM."
         ],
-        "for": ["software", "digital"],
+        "for": [],
         "link": "https://www.linkedin.com/feed/update/urn:li:activity:7243602012020330497/"
       }
     ],
@@ -121,12 +134,23 @@
         "date": "Winter 2024",
         "title": "Simulation \\& Linting Scripts",
         "details": [
-          "Developed Python and bash scripts for creating do files, running ModelSim, waveform viewing (GTKWave).",
+          "Developed Python and Shell scripts for creating do files, running ModelSim, waveform viewing (GTKWave).",
           "Created Python script that creates TCL files for linting designs using Qverify.",
-          "Python - bash - TCL - GTKWave - Qverify."
+          "Python - Shell - TCL - GTKWave - Qverify."
         ],
         "for": ["embedded", "digital"],
         "link": "https://github.com/salah0eldin/Scripts"
+      },
+      {
+        "date": "Spring 2024",
+        "title": "Advanced Tic Tac Toe Game",
+        "details": [
+          "Created the game with AI (minimax), user authentication, game history, and a Qt-based GUI.",
+          "Automated testing via Qt Test and GitHub Actions.",
+          "C++ - Minimax Algorithm - Secure Hashing - Qt - Qt Test - SQLite - Git - GitHub Actions."
+        ],
+        "for": ["embedded", "digital"],
+        "link": "https://www.linkedin.com/posts/salah-eldin-hassen-5bba10250_qt-cplusplus-softwaredevelopment-activity-7227345922031009793-xhzd/?rcm=ACoAAD4WDF8Bk9P5oS-irdrlv53Rzjd03ps4OSA"
       },
       {
         "date": "Spring 2025",
@@ -149,17 +173,6 @@
         "link": "https://github.com/salah0eldin/RustTCPServer"
       },
       {
-        "date": "Spring 2024",
-        "title": "Advanced Tic Tac Toe Game",
-        "details": [
-          "Created the game with AI (minimax), user authentication, game history, and a Qt-based GUI.",
-          "Automated testing via Qt Test and GitHub Actions.",
-          "C++ - Minimax Algorithm - Secure Hashing - Qt - Qt Test - SQLite - Git - GitHub Actions."
-        ],
-        "for": ["embedded", "digital"],
-        "link": "https://www.linkedin.com/posts/salah-eldin-hassen-5bba10250_qt-cplusplus-softwaredevelopment-activity-7227345922031009793-xhzd/?rcm=ACoAAD4WDF8Bk9P5oS-irdrlv53Rzjd03ps4OSA"
-      },
-      {
         "date": "Summer 2023",
         "title": "Advanced Image Editor with Qt and OpenCV",
         "details": [
@@ -178,7 +191,7 @@
           "Designed a modular SPI Slave Interface with RAM modules and validated using self-checking testbenches.",
           "Vivado - Questasim - Verilog - SPI - Single-Port RAM - Constraints - Linting."
         ],
-        "for": ["embedded", "software"],
+        "for": [],
         "link": "https://github.com/salah0eldin/Digital-Projects/tree/master/SPI_Slave_Interface"
       },
       {
@@ -188,7 +201,7 @@
           "Designed and tested a DSP48A1 block in Verilog with C++ golden model and Verilog test benches.",
           "Verilog - DSP48A1 - C++ Simulation - Test Benches - Linting."
         ],
-        "for": ["embedded", "software"],
+        "for": [],
         "link": "https://github.com/salah0eldin/Digital-Projects/tree/master/DSP48A1"
       }
     ],
@@ -206,8 +219,8 @@
     ]
   },
   "other_projects": [
+    "Analog IC Design Projects on Cadence (Virtuoso) \\texttt{|} \\href{https://github.com/salah0eldin/Analog_Projects}{Link}",
     "MATLAB Signal Processing and Simulink Control System Projects",
-    "Analog IC Design Projects on Cadence",
     "Reverse Tic Tac Toe Game 3x3 and 4x4 using web \\texttt{|} \\href{https://github.com/salah0eldin/Tic_tac_toe_AVOID_THE_X}{Link} \\texttt{|} \\href{https://salah0eldin.github.io/Tic_tac_toe_AVOID_THE_X/}{Game}",
     "Self Driving Robots - Path Planning \\& Obstacle Avoidance (MATLAB, FMM2, A*) \\texttt{|} \\href{https://github.com/salah0eldin/PathPLanningUsingFMM2andAStar}{Link}",
     "Maze-Solving Line-Follower Robot Car - Arduino-based pathfinding robot \\texttt{|} \\href{https://github.com/salah0eldin/ArduinoCarLineFollowerMazeSolver-Saver}{Link}",
@@ -218,7 +231,7 @@
       {
         "date": "Dec 2024 - Current",
         "title": "Advanced Embedded Diploma \\texttt{|} Eng: Ahmed Abdel-Gafar",
-        "for": ["software", "digital"],
+        "for": ["digital"],
         "description": [
           "ARM Cortex-M4 architecture, debugging, memory systems, and the compilation process.",
           "Linker script, startup code, and device driver development for GPIO, RCC, SysTick Timer, and NVIC.",
@@ -250,15 +263,6 @@
     ],
     "software": [
       {
-        "date": "Oct 2024",
-        "title": "SOME/IP Workshop \\texttt{|} BULLET - Eng/Hazem",
-        "for": ["embedded", "digital"],
-        "description": [
-          "Practical SOME/IP protocol workshop with client-server communication for automotive/IoT."
-        ],
-        "certificate": ""
-      },
-      {
         "date": "Aug 2024 - Sep 2024",
         "title": "Linux Fundamentals \\texttt{|} IEEE ASU",
         "for": ["embedded", "digital"],
@@ -267,13 +271,22 @@
           "Gained skills in process control, package handling, and SSH."
         ],
         "certificate": ""
+      },
+      {
+        "date": "Oct 2024",
+        "title": "SOME/IP Workshop \\texttt{|} BULLET - Eng/Hazem",
+        "for": ["embedded", "digital"],
+        "description": [
+          "Practical SOME/IP protocol workshop with client-server communication for automotive/IoT."
+        ],
+        "certificate": ""
       }
     ],
     "digital": [
       {
         "date": "Jan 2025 - Mar 2025",
         "title": "Digital Design Diploma \\texttt{|} Eng: Kareem Waseem",
-        "for": ["software", "embedded"],
+        "for": ["embedded"],
         "description": [
           "Studied digital and RTL design using Verilog for synthesis and simulation, FPGA design flow, and static timing analysis (STA).",
           "Worked with Vivado, IP catalog, clock domain crossing, low-power design, and Questa Lint for verification."
