@@ -138,7 +138,7 @@
           "Created Python script that creates TCL files for linting designs using Qverify.",
           "Python - Shell - TCL - GTKWave - Qverify."
         ],
-        "for": ["embedded", "digital"],
+        "for": ["digital"],
         "link": "https://github.com/salah0eldin/Scripts"
       },
       {
@@ -149,7 +149,7 @@
           "Automated testing via Qt Test and GitHub Actions.",
           "C++ - Minimax Algorithm - Secure Hashing - Qt - Qt Test - SQLite - Git - GitHub Actions."
         ],
-        "for": ["embedded", "digital"],
+        "for": [],
         "link": "https://www.linkedin.com/posts/salah-eldin-hassen-5bba10250_qt-cplusplus-softwaredevelopment-activity-7227345922031009793-xhzd/?rcm=ACoAAD4WDF8Bk9P5oS-irdrlv53Rzjd03ps4OSA"
       },
       {
@@ -169,7 +169,7 @@
           "Developed a multithreaded Rust TCP server, resolving port conflicts and optimizing client handling.",
           "Rust - Multithreading."
         ],
-        "for": ["embedded", "digital"],
+        "for": ["embedded"],
         "link": "https://github.com/salah0eldin/RustTCPServer"
       },
       {
